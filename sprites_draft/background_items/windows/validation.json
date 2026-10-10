@@ -1,0 +1,10 @@
+{
+  "textures": 100,
+  "unique_images": 100,
+  "portrait_rectangles": 100,
+  "fully_opaque": 100,
+  "max_colors": 49,
+  "styles": 10,
+  "facade_objects": 56549,
+  "distinct_dimensions": 100
+}

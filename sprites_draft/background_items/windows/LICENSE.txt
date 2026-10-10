@@ -1,0 +1,27 @@
+PIXEL FACADES 100 — FREE COMMERCIAL ASSET LICENSE
+Copyright (c) 2026 najjar320
+
+This license applies to the artwork, native project files, recipes and
+documentation distributed in the Pixel Facades 100 asset pack. It does not
+license the separate authoring applications or their dependencies.
+
+You may:
+- Use the assets in any number of personal and commercial projects.
+- Modify, recolor, crop and adapt the assets for those projects.
+- Distribute the assets as part of a finished game, application, video,
+  illustration or other creative work, including paid works.
+- Share the assets privately with collaborators working on your project,
+  provided they follow these terms and do not redistribute them separately.
+
+You may not:
+- Sell or redistribute the assets as standalone files, an asset pack,
+  template asset library or competing stock resource, whether free or paid.
+- Redistribute modified versions as standalone assets or asset packs.
+- Claim authorship of the original assets.
+
+Credit to najjar320 is appreciated but is not required. There are no royalties.
+The pack is free to download; donations do not change these permissions.
+This is a custom license, not CC0 or a public-domain dedication.
+
+The assets are provided as is, without warranty. To the extent permitted by
+applicable law, the author is not liable for damages arising from their use.

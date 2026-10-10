@@ -1,0 +1,797 @@
+[
+ {
+  "style": "brownstone",
+  "surface": "Stone Wall",
+  "recipe": "Adobe Block",
+  "values": {
+   "Seed": 100,
+   "Bond": 0,
+   "Bond Offset": 0.5,
+   "Row Height": 0.2,
+   "Length Min": 0.32,
+   "Length Max": 0.4,
+   "block.0.Base Color": [
+    0.24,
+    0.105,
+    0.075
+   ],
+   "block.0.Color 1": [
+    0.192,
+    0.084,
+    0.06
+   ],
+   "block.0.Color 2": [
+    0.63,
+    0.508,
+    0.326
+   ],
+   "block.0.Color 3": [
+    0.552,
+    0.42,
+    0.238
+   ],
+   "block.0.Mottle": 0.12,
+   "block.0.Mottle Scale": 7.5,
+   "block.0.Veins": 0.14,
+   "block.0.Vein Scale": 9.5,
+   "block.0.Vein Width": 0.06,
+   "block.0.Spots": 0.45,
+   "block.0.Spot Density": 0.2,
+   "block.0.Spot Size": 0.24,
+   "block.0.Spot Scale": 30.0,
+   "block.0.Margin": 0.0,
+   "block.0.Bevel": 0.014,
+   "block.0.Bevel Smooth": 1.0,
+   "block.0.Roughness": 0.95,
+   "block.0.Brush": 0,
+   "block.0.Brush Strength": 1.0,
+   "block.0.Brush Scale": 1.0,
+   "Mortar Size": 0.025,
+   "Hairline": 0.002,
+   "Profile": 0.4,
+   "Recess": 0.005,
+   "Mortar Color": [
+    0.406,
+    0.322,
+    0.226
+   ],
+   "Mortar Roughness": 0.92,
+   "Vein Stretch": 4.0,
+   "Vein Wander": 0.5,
+   "Grain Amount": 0.03,
+   "Grain Scale": 200.0,
+   "Distribution": 0,
+   "Course Repeat": 1.0,
+   "style.0.Weight": 1.0,
+   "style.0.Share": 1.0,
+   "style.0.Position": 0.5,
+   "Patch Size": 0.9,
+   "Patch Sharpness": 0.5,
+   "Patch Color Str": 0.35,
+   "Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0
+  }
+ },
+ {
+  "style": "limestone",
+  "surface": "Stone Wall",
+  "recipe": "Hebron Ashlar",
+  "values": {
+   "Seed": 101,
+   "Bond": 0,
+   "Bond Offset": 0.5,
+   "Row Height": 0.2,
+   "Length Min": 0.35,
+   "Length Max": 0.5,
+   "block.0.Base Color": [
+    0.62,
+    0.54,
+    0.39
+   ],
+   "block.0.Color 1": [
+    0.496,
+    0.43200000000000005,
+    0.31200000000000006
+   ],
+   "block.0.Color 2": [
+    0.63,
+    0.508,
+    0.326
+   ],
+   "block.0.Color 3": [
+    0.552,
+    0.42,
+    0.238
+   ],
+   "block.0.Mottle": 0.12,
+   "block.0.Mottle Scale": 7.5,
+   "block.0.Veins": 0.14,
+   "block.0.Vein Scale": 9.5,
+   "block.0.Vein Width": 0.06,
+   "block.0.Spots": 0.45,
+   "block.0.Spot Density": 0.2,
+   "block.0.Spot Size": 0.24,
+   "block.0.Spot Scale": 30.0,
+   "block.0.Margin": 0.022,
+   "block.0.Bevel": 0.006,
+   "block.0.Bevel Smooth": 0.5,
+   "block.0.Roughness": 0.82,
+   "block.0.Brush": 1,
+   "block.0.Brush Strength": 1.0,
+   "block.0.Brush Scale": 1.0,
+   "Mortar Size": 0.025,
+   "Hairline": 0.002,
+   "Profile": -0.5,
+   "Recess": 0.006,
+   "Mortar Color": [
+    0.145,
+    0.136,
+    0.124
+   ],
+   "Mortar Roughness": 0.92,
+   "Vein Stretch": 4.0,
+   "Vein Wander": 0.5,
+   "Grain Amount": 0.03,
+   "Grain Scale": 200.0,
+   "Distribution": 0,
+   "Course Repeat": 1.0,
+   "style.0.Weight": 1.0,
+   "style.0.Share": 1.0,
+   "style.0.Position": 0.5,
+   "Patch Size": 0.9,
+   "Patch Sharpness": 0.5,
+   "Patch Color Str": 0.35,
+   "Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0
+  }
+ },
+ {
+  "style": "warehouse",
+  "surface": "Stone Wall",
+  "recipe": "Running Brick",
+  "values": {
+   "Seed": 102,
+   "Bond": 0,
+   "Bond Offset": 0.5,
+   "Row Height": 0.2,
+   "Length Min": 0.225,
+   "Length Max": 0.225,
+   "block.0.Base Color": [
+    0.32,
+    0.095,
+    0.06
+   ],
+   "block.0.Color 1": [
+    0.256,
+    0.07600000000000001,
+    0.048
+   ],
+   "block.0.Color 2": [
+    0.442,
+    0.216,
+    0.146
+   ],
+   "block.0.Color 3": [
+    0.196,
+    0.086,
+    0.056
+   ],
+   "block.0.Mottle": 0.12,
+   "block.0.Mottle Scale": 22.0,
+   "block.0.Veins": 0.14,
+   "block.0.Vein Scale": 9.5,
+   "block.0.Vein Width": 0.06,
+   "block.0.Spots": 0.45,
+   "block.0.Spot Density": 0.2,
+   "block.0.Spot Size": 0.24,
+   "block.0.Spot Scale": 30.0,
+   "block.0.Margin": 0.0,
+   "block.0.Bevel": 0.003,
+   "block.0.Bevel Smooth": 0.5,
+   "block.0.Roughness": 0.86,
+   "block.0.Brush": 0,
+   "block.0.Brush Strength": 1.0,
+   "block.0.Brush Scale": 1.0,
+   "Mortar Size": 0.025,
+   "Hairline": 0.002,
+   "Profile": -0.3,
+   "Recess": 0.004,
+   "Mortar Color": [
+    0.386,
+    0.372,
+    0.346
+   ],
+   "Mortar Roughness": 0.92,
+   "Vein Stretch": 4.0,
+   "Vein Wander": 0.5,
+   "Grain Amount": 0.03,
+   "Grain Scale": 200.0,
+   "Distribution": 0,
+   "Course Repeat": 1.0,
+   "style.0.Weight": 1.0,
+   "style.0.Share": 1.0,
+   "style.0.Position": 0.5,
+   "Patch Size": 0.9,
+   "Patch Sharpness": 0.5,
+   "Patch Color Str": 0.35,
+   "Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0
+  }
+ },
+ {
+  "style": "art_deco",
+  "surface": "Concrete",
+  "recipe": "Fair Face",
+  "values": {
+   "concrete.Seed": 0,
+   "concrete.Base Color": [
+    0.32,
+    0.36,
+    0.34
+   ],
+   "concrete.Tint Color": [
+    0.482,
+    0.476,
+    0.462
+   ],
+   "concrete.Tint Amount": 0.22,
+   "concrete.Tint Scale": 3.0,
+   "concrete.Roughness": 0.62,
+   "concrete.Roughness Var": 0.08,
+   "concrete.Aggregate": 0.1,
+   "concrete.Aggregate Scale": 60.0,
+   "concrete.Aggregate Size": 0.35,
+   "concrete.Aggregate Color": [
+    0.36,
+    0.35,
+    0.33
+   ],
+   "concrete.Air Pores": 0.18,
+   "concrete.Pore Size": 0.0016,
+   "concrete.Pore Density": 0.14,
+   "concrete.Grain Amount": 0.16,
+   "concrete.Grain Scale": 240.0,
+   "concrete.Formwork": 0,
+   "concrete.Board Width": 0.2,
+   "concrete.Board Relief": 0.002,
+   "concrete.Board Grain": 0.3,
+   "concrete.Joint Recess": 0.003,
+   "concrete.Chamfer": 0.002,
+   "concrete.Tie Holes": 0.0,
+   "concrete.Tie Hole Size": 0.025,
+   "concrete.Stain Amount": 0.06,
+   "concrete.Stain Color": [
+    0.2,
+    0.19,
+    0.17
+   ],
+   "concrete.Streaks": 0.04,
+   "concrete.Streak Length": 6.0,
+   "concrete.Cracks": 0.0,
+   "concrete.Crack Width": 0.02,
+   "concrete.Crack Scale": 8.0,
+   "concrete.Edge Wear": 0.1,
+   "concrete.Bloom": 0.0,
+   "concrete.Bloom Color": [
+    0.86,
+    0.86,
+    0.84
+   ],
+   "concrete.Rust": 0.0,
+   "concrete.Rust Color": [
+    0.36,
+    0.16,
+    0.06
+   ],
+   "concrete.Spalling": 0.0,
+   "concrete.Spall Size": 0.12,
+   "concrete.Spall Depth": 0.012,
+   "concrete.Growth": 0.0,
+   "concrete.Growth Color": [
+    0.104,
+    0.152,
+    0.056
+   ],
+   "concrete.Growth Scale": 3.0,
+   "concrete.Growth Bias": 0.5,
+   "concrete.Growth Cling": 0.6,
+   "concrete.Growth Relief": 0.002,
+   "concrete.Vines": 0.0,
+   "concrete.Vine Color": [
+    0.072,
+    0.112,
+    0.04
+   ],
+   "concrete.Vine Width": 0.006,
+   "concrete.Vine Runs": 6.0,
+   "concrete.Vine Wander": 0.5,
+   "concrete.Leaves": 0.6,
+   "concrete.Leaf Size": 0.03,
+   "concrete.Leaf Color": [
+    0.14,
+    0.216,
+    0.072
+   ],
+   "concrete.Patch Size": 0.9,
+   "concrete.Patch Sharpness": 0.5,
+   "concrete.Patch Color Str": 0.18,
+   "concrete.Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0,
+   "Seed": 103
+  }
+ },
+ {
+  "style": "mediterranean",
+  "surface": "Plaster / Render",
+  "recipe": "Sun Bleached",
+  "values": {
+   "plaster.Seed": 0,
+   "plaster.Base Color": [
+    0.63,
+    0.43,
+    0.26
+   ],
+   "plaster.Tint Color": [
+    0.822,
+    0.802,
+    0.76
+   ],
+   "plaster.Tint Amount": 0.16,
+   "plaster.Tint Scale": 5.0,
+   "plaster.Roughness": 0.9,
+   "plaster.Pattern": 1,
+   "plaster.Trowel Scale": 10.0,
+   "plaster.Trowel Depth": 0.0012,
+   "plaster.Trowel Sharpness": 0.5,
+   "plaster.Trowel Direction": 0.0,
+   "plaster.Trowel Wander": 0.4,
+   "plaster.Sand Amount": 0.22,
+   "plaster.Sand Size": 0.0008,
+   "plaster.Grain Amount": 0.26,
+   "plaster.Grain Scale": 300.0,
+   "plaster.Cracks": 0.2,
+   "plaster.Crack Width": 0.006,
+   "plaster.Crack Scale": 20.0,
+   "plaster.Stain Amount": 0.15,
+   "plaster.Stain Color": [
+    0.31,
+    0.29,
+    0.25
+   ],
+   "plaster.Edge Wear": 0.45,
+   "plaster.Bloom": 0.0,
+   "plaster.Bloom Color": [
+    0.9,
+    0.9,
+    0.88
+   ],
+   "plaster.Spalling": 0.0,
+   "plaster.Spall Size": 0.18,
+   "plaster.Spall Depth": 0.006,
+   "plaster.Growth": 0.0,
+   "plaster.Growth Color": [
+    0.104,
+    0.152,
+    0.056
+   ],
+   "plaster.Growth Scale": 3.0,
+   "plaster.Growth Bias": 0.5,
+   "plaster.Growth Cling": 0.6,
+   "plaster.Growth Relief": 0.002,
+   "plaster.Vines": 0.0,
+   "plaster.Vine Color": [
+    0.072,
+    0.112,
+    0.04
+   ],
+   "plaster.Vine Width": 0.006,
+   "plaster.Vine Runs": 6.0,
+   "plaster.Vine Wander": 0.5,
+   "plaster.Leaves": 0.6,
+   "plaster.Leaf Size": 0.03,
+   "plaster.Leaf Color": [
+    0.14,
+    0.216,
+    0.072
+   ],
+   "plaster.Patch Size": 0.9,
+   "plaster.Patch Sharpness": 0.5,
+   "plaster.Patch Color Str": 0.28,
+   "plaster.Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0,
+   "Seed": 104
+  }
+ },
+ {
+  "style": "half_timber",
+  "surface": "Plaster / Render",
+  "recipe": "Cracked Lime",
+  "values": {
+   "plaster.Seed": 0,
+   "plaster.Base Color": [
+    0.55,
+    0.51,
+    0.39
+   ],
+   "plaster.Tint Color": [
+    0.702,
+    0.674,
+    0.616
+   ],
+   "plaster.Tint Amount": 0.24,
+   "plaster.Tint Scale": 5.0,
+   "plaster.Roughness": 0.9,
+   "plaster.Pattern": 0,
+   "plaster.Trowel Scale": 12.0,
+   "plaster.Trowel Depth": 0.001,
+   "plaster.Trowel Sharpness": 0.5,
+   "plaster.Trowel Direction": 0.0,
+   "plaster.Trowel Wander": 0.4,
+   "plaster.Sand Amount": 0.3,
+   "plaster.Sand Size": 0.0008,
+   "plaster.Grain Amount": 0.26,
+   "plaster.Grain Scale": 300.0,
+   "plaster.Cracks": 0.72,
+   "plaster.Crack Width": 0.005,
+   "plaster.Crack Scale": 26.0,
+   "plaster.Stain Amount": 0.2,
+   "plaster.Stain Color": [
+    0.31,
+    0.29,
+    0.25
+   ],
+   "plaster.Edge Wear": 0.3,
+   "plaster.Bloom": 0.25,
+   "plaster.Bloom Color": [
+    0.9,
+    0.9,
+    0.88
+   ],
+   "plaster.Spalling": 0.0,
+   "plaster.Spall Size": 0.18,
+   "plaster.Spall Depth": 0.006,
+   "plaster.Growth": 0.0,
+   "plaster.Growth Color": [
+    0.104,
+    0.152,
+    0.056
+   ],
+   "plaster.Growth Scale": 3.0,
+   "plaster.Growth Bias": 0.5,
+   "plaster.Growth Cling": 0.6,
+   "plaster.Growth Relief": 0.002,
+   "plaster.Vines": 0.0,
+   "plaster.Vine Color": [
+    0.072,
+    0.112,
+    0.04
+   ],
+   "plaster.Vine Width": 0.006,
+   "plaster.Vine Runs": 6.0,
+   "plaster.Vine Wander": 0.5,
+   "plaster.Leaves": 0.6,
+   "plaster.Leaf Size": 0.03,
+   "plaster.Leaf Color": [
+    0.14,
+    0.216,
+    0.072
+   ],
+   "plaster.Patch Size": 0.9,
+   "plaster.Patch Sharpness": 0.5,
+   "plaster.Patch Color Str": 0.35,
+   "plaster.Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0,
+   "Seed": 105
+  }
+ },
+ {
+  "style": "industrial",
+  "surface": "Stone Wall",
+  "recipe": "Basalt Block",
+  "values": {
+   "Seed": 106,
+   "Bond": 0,
+   "Bond Offset": 0.5,
+   "Row Height": 0.2,
+   "Length Min": 0.4,
+   "Length Max": 0.6,
+   "block.0.Base Color": [
+    0.13,
+    0.17,
+    0.18
+   ],
+   "block.0.Color 1": [
+    0.10400000000000001,
+    0.136,
+    0.144
+   ],
+   "block.0.Color 2": [
+    0.63,
+    0.508,
+    0.326
+   ],
+   "block.0.Color 3": [
+    0.066,
+    0.066,
+    0.068
+   ],
+   "block.0.Mottle": 0,
+   "block.0.Mottle Scale": 7.5,
+   "block.0.Veins": 0,
+   "block.0.Vein Scale": 9.5,
+   "block.0.Vein Width": 0.06,
+   "block.0.Spots": 0,
+   "block.0.Spot Density": 0.5,
+   "block.0.Spot Size": 0.08,
+   "block.0.Spot Scale": 200.0,
+   "block.0.Margin": 0.0,
+   "block.0.Bevel": 0.004,
+   "block.0.Bevel Smooth": 0.5,
+   "block.0.Roughness": 0.72,
+   "block.0.Brush": 0,
+   "block.0.Brush Strength": 1.0,
+   "block.0.Brush Scale": 0.4,
+   "Mortar Size": 0.025,
+   "Hairline": 0.002,
+   "Profile": -0.5,
+   "Recess": 0.004,
+   "Mortar Color": [
+    0.096,
+    0.094,
+    0.092
+   ],
+   "Mortar Roughness": 0.92,
+   "Vein Stretch": 4.0,
+   "Vein Wander": 0.5,
+   "Grain Amount": 0.03,
+   "Grain Scale": 200.0,
+   "Distribution": 0,
+   "Course Repeat": 1.0,
+   "style.0.Weight": 1.0,
+   "style.0.Share": 1.0,
+   "style.0.Position": 0.5,
+   "Patch Size": 0.9,
+   "Patch Sharpness": 0.5,
+   "Patch Color Str": 0.35,
+   "Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0
+  }
+ },
+ {
+  "style": "art_nouveau",
+  "surface": "Plaster / Render",
+  "recipe": "Smooth Render",
+  "values": {
+   "plaster.Seed": 0,
+   "plaster.Base Color": [
+    0.3,
+    0.43,
+    0.34
+   ],
+   "plaster.Tint Color": [
+    0.746,
+    0.724,
+    0.682
+   ],
+   "plaster.Tint Amount": 0.2,
+   "plaster.Tint Scale": 5.0,
+   "plaster.Roughness": 0.8,
+   "plaster.Pattern": 0,
+   "plaster.Trowel Scale": 8.0,
+   "plaster.Trowel Depth": 0.0006,
+   "plaster.Trowel Sharpness": 0.5,
+   "plaster.Trowel Direction": 0.0,
+   "plaster.Trowel Wander": 0.4,
+   "plaster.Sand Amount": 0.18,
+   "plaster.Sand Size": 0.0008,
+   "plaster.Grain Amount": 0.2,
+   "plaster.Grain Scale": 300.0,
+   "plaster.Cracks": 0.04,
+   "plaster.Crack Width": 0.01,
+   "plaster.Crack Scale": 14.0,
+   "plaster.Stain Amount": 0.15,
+   "plaster.Stain Color": [
+    0.31,
+    0.29,
+    0.25
+   ],
+   "plaster.Edge Wear": 0.2,
+   "plaster.Bloom": 0.0,
+   "plaster.Bloom Color": [
+    0.9,
+    0.9,
+    0.88
+   ],
+   "plaster.Spalling": 0.0,
+   "plaster.Spall Size": 0.18,
+   "plaster.Spall Depth": 0.006,
+   "plaster.Growth": 0.0,
+   "plaster.Growth Color": [
+    0.104,
+    0.152,
+    0.056
+   ],
+   "plaster.Growth Scale": 3.0,
+   "plaster.Growth Bias": 0.5,
+   "plaster.Growth Cling": 0.6,
+   "plaster.Growth Relief": 0.002,
+   "plaster.Vines": 0.0,
+   "plaster.Vine Color": [
+    0.072,
+    0.112,
+    0.04
+   ],
+   "plaster.Vine Width": 0.006,
+   "plaster.Vine Runs": 6.0,
+   "plaster.Vine Wander": 0.5,
+   "plaster.Leaves": 0.6,
+   "plaster.Leaf Size": 0.03,
+   "plaster.Leaf Color": [
+    0.14,
+    0.216,
+    0.072
+   ],
+   "plaster.Patch Size": 0.9,
+   "plaster.Patch Sharpness": 0.5,
+   "plaster.Patch Color Str": 0.35,
+   "plaster.Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0,
+   "Seed": 107
+  }
+ },
+ {
+  "style": "modern",
+  "surface": "Metal",
+  "recipe": "Painted Panel",
+  "values": {
+   "metal.Seed": 0,
+   "metal.Base Color": [
+    0.3,
+    0.38,
+    0.43
+   ],
+   "metal.Roughness": 0.4,
+   "metal.Brushed": 0,
+   "metal.Brush Stretch": 12.0,
+   "metal.Brush Angle": 0.0,
+   "metal.Profile": 3,
+   "metal.Corrugation Pitch": 0.6,
+   "metal.Corrugation Depth": 0.004,
+   "metal.Rivets": 0.25,
+   "metal.Rivet Size": 0.012,
+   "metal.Rivet Pitch": 0.5,
+   "metal.Paint": 1,
+   "metal.Paint Color": [
+    0.3,
+    0.38,
+    0.43
+   ],
+   "metal.Paint Roughness": 0.35,
+   "metal.Paint Thickness": 0.0002,
+   "metal.Chipping": 0,
+   "metal.Chip Size": 0.03,
+   "metal.Scratches": 0,
+   "metal.Rust": 0,
+   "metal.Rust Color": [
+    0.36,
+    0.16,
+    0.06
+   ],
+   "metal.Grime": 0,
+   "metal.Grime Color": [
+    0.116,
+    0.112,
+    0.104
+   ],
+   "metal.Patch Size": 0.9,
+   "metal.Patch Sharpness": 0.5,
+   "metal.Patch Color Str": 0.35,
+   "metal.Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0,
+   "Seed": 108
+  }
+ },
+ {
+  "style": "shop_terrace",
+  "surface": "Stone Wall",
+  "recipe": "Third Bond Brick",
+  "values": {
+   "Seed": 109,
+   "Bond": 0,
+   "Bond Offset": 0.333,
+   "Row Height": 0.2,
+   "Length Min": 0.225,
+   "Length Max": 0.225,
+   "block.0.Base Color": [
+    0.38,
+    0.16,
+    0.1
+   ],
+   "block.0.Color 1": [
+    0.30400000000000005,
+    0.128,
+    0.08000000000000002
+   ],
+   "block.0.Color 2": [
+    0.63,
+    0.508,
+    0.326
+   ],
+   "block.0.Color 3": [
+    0.552,
+    0.42,
+    0.238
+   ],
+   "block.0.Mottle": 0.12,
+   "block.0.Mottle Scale": 7.5,
+   "block.0.Veins": 0.14,
+   "block.0.Vein Scale": 9.5,
+   "block.0.Vein Width": 0.06,
+   "block.0.Spots": 0.45,
+   "block.0.Spot Density": 0.2,
+   "block.0.Spot Size": 0.24,
+   "block.0.Spot Scale": 30.0,
+   "block.0.Margin": 0.0,
+   "block.0.Bevel": 0.003,
+   "block.0.Bevel Smooth": 0.5,
+   "block.0.Roughness": 0.82,
+   "block.0.Brush": 0,
+   "block.0.Brush Strength": 1.0,
+   "block.0.Brush Scale": 1.0,
+   "Mortar Size": 0.025,
+   "Hairline": 0.002,
+   "Profile": -0.5,
+   "Recess": 0.005,
+   "Mortar Color": [
+    0.145,
+    0.136,
+    0.124
+   ],
+   "Mortar Roughness": 0.92,
+   "Vein Stretch": 4.0,
+   "Vein Wander": 0.5,
+   "Grain Amount": 0.03,
+   "Grain Scale": 200.0,
+   "Distribution": 0,
+   "Course Repeat": 1.0,
+   "style.0.Weight": 1.0,
+   "style.0.Share": 1.0,
+   "style.0.Position": 0.5,
+   "Patch Size": 0.9,
+   "Patch Sharpness": 0.5,
+   "Patch Color Str": 0.35,
+   "Patch Detail Str": 0.35,
+   "out.Resolution": 5,
+   "out.Tile Size": 2.0,
+   "out.Palette": 0,
+   "out.Samples": 0
+  }
+ }
+]
