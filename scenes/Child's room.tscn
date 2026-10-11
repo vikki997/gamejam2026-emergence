@@ -1065,15 +1065,88 @@ sources/2 = SubResource("TileSetAtlasSource_dqs17")
 sources/4 = SubResource("TileSetAtlasSource_bidxs")
 sources/0 = SubResource("TileSetAtlasSource_vhf7o")
 
-[node name="Node2D" type="Node2D" unique_id=1051383584]
+[sub_resource type="GDScript" id="GDScript_q8m1p"]
+script/source = "extends Area2D
+
+@onready var anim_player: AnimationPlayer = $AnimationPlayer 
+const NEXT_SCENE: String = \"res://living room.tscn\" 
+var can_click: bool = true 
+
+func _input_event(viewport, event, shape_idx): # 鼠标点击门碰撞区触发
+	if event.is_action_pressed(\"interact\") and can_click: 
+		can_click = false 
+		anim_player.play(\"open door\") 
+		
+		await anim_player.animation_finished # 等待开门动画播完
+		await fade_black() # 等待黑屏转场完成
+		get_tree().change_scene_to_file(NEXT_SCENE) # 切换到客厅
+
+func fade_black(): # 黑屏淡入转场函数
+	var black_mask = ColorRect.new() # 创建黑色遮罩
+	black_mask.color = Color(0,0,0,0) # 初始完全透明
+	black_mask.z_index = 999 # 放到画面最顶层
+	get_tree().root.add_child(black_mask) # 添加到游戏画面
+	
+	var tween = create_tween() # 创建渐变动画
+	tween.tween_property(black_mask, \"color:a\", 1, 0.4) # 0.4秒慢慢变黑
+	await tween.finished # 等待黑屏渐变结束
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8m1p"]
+size = Vector2(28.799988, 47.999985)
+
+[sub_resource type="Animation" id="Animation_bidxs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("门关:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(113, 16, 30, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_ydjgy"]
+resource_name = "open door"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("门关:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(113, 16, 30, 48), Rect2(161, 13, 30, 54)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhf7o"]
+_data = {
+&"RESET": SubResource("Animation_bidxs"),
+&"open door": SubResource("Animation_ydjgy")
+}
+
+[node name="Child\'s room" type="Node2D" unique_id=1051383584]
+position = Vector2(0, -1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1270937444]
+z_index = 4
+zoom = Vector2(3.88, 3.88)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=899490066]
+position = Vector2(31, 124.775)
 tile_map_data = PackedByteArray("AAACAPr/AgAIAAgAAAACAPv/AgAIAAkAAAADAPr/AgAJAAgAAAADAPv/AgAJAAkAAAAAAPr/AgAIAAgAAAAAAPv/AgAIAAkAAAABAPr/AgAJAAgAAAABAPv/AgAJAAkAAAD+//r/AgAIAAgAAAD+//v/AgAIAAkAAAD///r/AgAJAAgAAAD///v/AgAJAAkAAAD8//r/AgAIAAgAAAD8//v/AgAIAAkAAAD9//r/AgAJAAgAAAD9//v/AgAJAAkAAAD6//r/AgAIAAgAAAD6//v/AgAIAAkAAAD7//r/AgAJAAgAAAD7//v/AgAJAAkAAAD6//j/AgAIAAgAAAD6//n/AgAIAAkAAAD7//j/AgAJAAgAAAD7//n/AgAJAAkAAAD8//j/AgAIAAgAAAD8//n/AgAIAAkAAAD9//j/AgAJAAgAAAD9//n/AgAJAAkAAAD+//j/AgAIAAgAAAD+//n/AgAIAAkAAAD///j/AgAJAAgAAAD///n/AgAJAAkAAAAAAPj/AgAIAAgAAAAAAPn/AgAIAAkAAAABAPj/AgAJAAgAAAABAPn/AgAJAAkAAAACAPj/AgAIAAgAAAACAPn/AgAIAAkAAAADAPj/AgAJAAgAAAADAPn/AgAJAAkAAAD4//j/AgAIAAgAAAD4//n/AgAIAAkAAAD5//j/AgAJAAgAAAD5//n/AgAJAAkAAAD4//r/AgAIAAgAAAD4//v/AgAIAAkAAAD5//r/AgAJAAgAAAD5//v/AgAJAAkAAAD4//b/BAABAAIAAAD4//f/BAABAAIAAAD5//b/BAADAAIAAAD5//f/BAACAAIAAAD6//b/BAADAAIAAAD6//f/BAADAAIAAAD7//b/BAADAAIAAAD7//f/BAACAAIAAAD8//b/BAACAAIAAAD8//f/BAADAAIAAAD9//b/BAACAAIAAAD9//f/BAACAAIAAAD+//b/BAACAAIAAAD+//f/BAADAAIAAAD///b/BAACAAIAAAD///f/BAACAAIAAAAAAPb/BAACAAIAAAAAAPf/BAADAAIAAAABAPb/BAACAAIAAAABAPf/BAACAAIAAAACAPb/BAACAAIAAAACAPf/BAADAAIAAAADAPb/BAAEAAIAAAADAPf/BAAEAAIAAAD4//X/BAABAAIAAAD6//T/BAADAAEAAAD6//X/BAADAAIAAAD7//T/BAACAAEAAAD7//X/BAACAAIAAAD8//T/BAADAAEAAAD8//X/BAACAAIAAAD9//T/BAACAAEAAAD9//X/BAACAAIAAAD+//T/BAADAAEAAAD+//X/BAACAAIAAAD///T/BAACAAEAAAD///X/BAACAAIAAAAAAPT/BAADAAEAAAAAAPX/BAACAAIAAAABAPT/BAACAAEAAAABAPX/BAACAAIAAAACAPT/BAADAAEAAAACAPX/BAACAAIAAAADAPT/BAAEAAEAAAADAPX/BAAEAAIAAAD3//T/AgABAAMAAAD3//X/AgABAAMAAAD3//b/AgABAAMAAAD3//f/AgABAAMAAAD3//j/AgABAAMAAAD3//n/AgABAAMAAAD3//r/AgABAAMAAAD3//v/AgABAAMAAAAEAPT/AgAEAAMAAAAEAPX/AgAEAAMAAAAEAPb/AgAEAAMAAAAEAPf/AgAEAAMAAAAEAPj/AgAEAAMAAAAEAPn/AgAEAAMAAAAEAPr/AgAEAAMAAAAEAPv/AgAEAAMAAAD4//z/AgACAAQAAAD5//z/AgACAAQAAAD6//z/AgACAAQAAAD7//z/AgACAAQAAAD8//z/AgACAAQAAAD9//z/AgACAAQAAAD+//z/AgACAAQAAAD///z/AgACAAQAAAAAAPz/AgACAAQAAAABAPz/AgACAAQAAAACAPz/AgACAAQAAAADAPz/AgACAAQAAAD4//P/AgACAAUAAAD5//P/AgACAAUAAAD6//P/AgACAAUAAAD7//P/AgACAAUAAAD8//P/AgACAAUAAAD9//P/AgACAAUAAAD+//P/AgACAAUAAAD///P/AgACAAUAAAAAAPP/AgACAAUAAAABAPP/AgACAAUAAAACAPP/AgACAAUAAAADAPP/AgACAAUAAAD4//T/BAABAAEAAAD5//T/BAACAAEAAAD5//X/BAACAAIAAAA=")
 tile_set = SubResource("TileSet_q8m1p")
 
 [node name="床头柜" type="Sprite2D" parent="." unique_id=1048412764]
 z_index = 1
-position = Vector2(-27.999998, -130)
+position = Vector2(3.0000052, -5.224983)
 scale = Vector2(0.86, 0.86)
 texture = ExtResource("3_hbesk")
 region_enabled = true
@@ -1086,24 +1159,34 @@ texture = ExtResource("3_hbesk")
 region_enabled = true
 region_rect = Rect2(324, 49, 9, 11)
 
-[node name="门" type="Sprite2D" parent="." unique_id=1052006813]
+[node name="Area2D" type="Area2D" parent="." unique_id=407271540]
 z_index = 1
-position = Vector2(-108, -148)
+position = Vector2(-77, -23.224998)
 scale = Vector2(0.8333334, 0.8333334)
+script = SubResource("GDScript_q8m1p")
+
+[node name="门关" type="Sprite2D" parent="Area2D" unique_id=396175295]
+z_index = 2
 texture = ExtResource("4_dqs17")
 region_enabled = true
 region_rect = Rect2(113, 16, 30, 48)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1641453875]
+shape = SubResource("RectangleShape2D_q8m1p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=997043219]
+libraries/ = SubResource("AnimationLibrary_vhf7o")
+
 [node name="床" type="Sprite2D" parent="." unique_id=821317140]
 z_index = 1
-position = Vector2(3, -127)
+position = Vector2(34, -2.2249985)
 texture = ExtResource("3_hbesk")
 region_enabled = true
 region_rect = Rect2(214, 118, 36, 50)
 
 [node name="时钟" type="Sprite2D" parent="." unique_id=658082574]
 z_index = 1
-position = Vector2(-49, -173)
+position = Vector2(-18, -48.225)
 scale = Vector2(0.8125, 0.8125)
 texture = ExtResource("5_bidxs")
 region_enabled = true
@@ -1111,21 +1194,21 @@ region_rect = Rect2(16, 128, 16, 16)
 
 [node name="椅子" type="Sprite2D" parent="." unique_id=1211027882]
 z_index = 1
-position = Vector2(-28, -115)
+position = Vector2(3, 9.775002)
 texture = ExtResource("3_hbesk")
 region_enabled = true
 region_rect = Rect2(402, 188, 12, 19)
 
 [node name="书架" type="Sprite2D" parent="." unique_id=602370653]
 z_index = 1
-position = Vector2(-49, -137)
+position = Vector2(-18, -12.224998)
 texture = ExtResource("6_ydjgy")
 region_enabled = true
 region_rect = Rect2(464, 222, 16, 34)
 
 [node name="挂灯" type="Sprite2D" parent="." unique_id=961518107]
 z_index = 1
-position = Vector2(-21.000002, -160)
+position = Vector2(9.999998, -35.225)
 scale = Vector2(0.7954546, 0.7954545)
 texture = ExtResource("3_hbesk")
 region_enabled = true
@@ -1133,14 +1216,14 @@ region_rect = Rect2(50, 21, 11, 18)
 
 [node name="壁画" type="Sprite2D" parent="." unique_id=1839086277]
 z_index = 1
-position = Vector2(3, -166)
+position = Vector2(34, -41.225)
 texture = ExtResource("3_hbesk")
 region_enabled = true
 region_rect = Rect2(199, 33, 18, 15)
 
 [node name="窗户" type="Sprite2D" parent="." unique_id=805910037]
 z_index = 1
-position = Vector2(40, -175.00002)
+position = Vector2(71, -50.225)
 scale = Vector2(0.7527778, 0.7527778)
 texture = ExtResource("7_bidxs")
 region_enabled = true
@@ -1148,7 +1231,7 @@ region_rect = Rect2(103, 9, 18, 18)
 
 [node name="宝箱" type="Sprite2D" parent="." unique_id=965636383]
 z_index = 1
-position = Vector2(50, -74)
+position = Vector2(81, 50.774994)
 scale = Vector2(1.0833336, 1.0833336)
 texture = ExtResource("4_2geo2")
 region_enabled = true
@@ -1156,7 +1239,7 @@ region_rect = Rect2(119, 310, 16, 12)
 
 [node name="衣柜" type="Sprite2D" parent="." unique_id=307058435]
 z_index = 1
-position = Vector2(41, -140.00002)
+position = Vector2(72, -15.225021)
 scale = Vector2(0.6875, 0.6875)
 texture = ExtResource("9_ydjgy")
 region_enabled = true
@@ -1164,7 +1247,7 @@ region_rect = Rect2(16, 32, 48, 64)
 
 [node name="书" type="Sprite2D" parent="." unique_id=1499010348]
 z_index = 2
-position = Vector2(-50, -155)
+position = Vector2(-19, -30.224998)
 texture = ExtResource("7_bidxs")
 region_enabled = true
 region_rect = Rect2(114, 164, 11, 11)
