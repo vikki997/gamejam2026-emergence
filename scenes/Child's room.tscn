@@ -1069,7 +1069,7 @@ sources/0 = SubResource("TileSetAtlasSource_vhf7o")
 script/source = "extends Area2D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer 
-const NEXT_SCENE: String = \"res://living room.tscn\" 
+const NEXT_SCENE: String = \"res://scenes/living room.tscn\" 
 var can_click: bool = true 
 
 func _input_event(viewport, event, shape_idx): # 鼠标点击门碰撞区触发
