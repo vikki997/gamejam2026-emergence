@@ -2,7 +2,7 @@ extends Node
 var fragments_collected = 0
 var has_key = false
 var diary_unlocked = false
-var coatrack_solved = false
+var coat_rack_solved = false
 
 func unlock_diary():
 	diary_unlocked = true
@@ -12,7 +12,7 @@ func reset_game():
 	fragments_collected = 0
 	has_key = false
 	diary_unlocked = false
-	coatrack_solved = false # 补上这个状态重置！
+	coat_rack_solved = false # 补上这个状态重置！
 	print("游戏状态已全部重置")
 
 # 统一房间跳转函数（自带黑屏转场）

@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://00g8jvijk6bu" path="res://original art/background_items/furniture/modern/cozy_interiors_free_spritesheet.png" id="16_jnsvo"]
 [ext_resource type="Texture2D" uid="uid://dfr1f3xcnt02p" path="res://original art/background_items/furniture/modern/decorations_LRK.png" id="17_ma3su"]
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="18_34rcw"]
+[ext_resource type="PackedScene" uid="uid://c1fj5oa7lyuw6" path="res://scenes/furniture/CoatRack.tscn" id="19_yp6bi"]
+[ext_resource type="PackedScene" uid="uid://donnlmwq0mikt" path="res://scenes/zoom/CoatRackZoom.tscn" id="20_phjea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y145g"]
 texture = ExtResource("2_3n2pf")
@@ -6496,3 +6498,12 @@ layer_0/tile_data = PackedInt32Array(-327682, 1441799, 7, -262146, 1441799, 8, -
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1915513031]
 tile_map_data = PackedByteArray("AAAGAAAAAAAKAAYAAAAGAAEAAAAKAAcAAAAIAP7/AAALAAYAAAAIAP//AAALAAcAAAAEAP7/AAAJAAYAAAAEAP//AAAJAAcAAAA=")
 tile_set = SubResource("TileSet_uqv50")
+
+[node name="Interactables" type="Node2D" parent="." unique_id=1620834944]
+y_sort_enabled = true
+
+[node name="CoatRack" parent="Interactables" unique_id=2026644188 instance=ExtResource("19_yp6bi")]
+position = Vector2(-5, 62)
+zoom_scene = ExtResource("20_phjea")
+
+[node name="ZoomLayer" type="CanvasLayer" parent="." unique_id=1564836728]

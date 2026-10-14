@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://donnlmwq0mikt"]
+
+[ext_resource type="Script" uid="uid://btn7fmfpk1sxt" path="res://scripts/CoatRackZoom.gd" id="1_ds5t8"]
+[ext_resource type="Texture2D" uid="uid://c7ftrdaqujci1" path="res://art/zoom/rack/rack_front.png" id="1_mosas"]
+[ext_resource type="Texture2D" uid="uid://dewvsl6u51koa" path="res://art/zoom/rack/clothes_pile.png" id="2_vp5h7"]
+[ext_resource type="Texture2D" uid="uid://bc25ydatv30yp" path="res://art/zoom/rack/blue_coat_normal.png" id="4_nf1g4"]
+[ext_resource type="Texture2D" uid="uid://bthd6eentjnye" path="res://art/zoom/rack/teal_sweater_normal.png" id="5_fbsq0"]
+[ext_resource type="Texture2D" uid="uid://qgntqgkj46bd" path="res://art/zoom/rack/pink_skirt_normal.png" id="6_fr0hp"]
+[ext_resource type="Texture2D" uid="uid://dixagkr1bapr6" path="res://art/zoom/rack/hat.png" id="7_312ul"]
+
+[node name="CoatRackZoom" type="Control" unique_id=560867877]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 35.0
+offset_right = 20.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7665072, 0.7665072)
+size_flags_horizontal = 0
+script = ExtResource("1_ds5t8")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1549413624]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.64410377, 0.90937066, 0.90937066, 1)
+
+[node name="Content" type="Control" parent="." unique_id=1018247952]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 258.0
+offset_top = 28.0
+offset_right = 258.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5754559, 0.5754559)
+offset_transform_enabled = true
+
+[node name="RackArea" type="Control" parent="Content" unique_id=1912502395]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -635.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RackSprite" type="TextureRect" parent="Content/RackArea" unique_id=1485677014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 183.07832
+offset_top = -4.465309
+offset_right = 237.07831
+offset_bottom = 63.21747
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mosas")
+
+[node name="ClothesPile" type="TextureRect" parent="Content/RackArea" unique_id=243498101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 218.80092
+offset_top = -8.93065
+offset_right = 242.8009
+offset_bottom = 21.150574
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vp5h7")
+
+[node name="ClothesArea" type="Control" parent="Content" unique_id=972143202]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.395966
+offset_top = 651.9374
+offset_right = -13.395996
+offset_bottom = 651.9375
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0278939, 0.3456615)
+
+[node name="BlueCoat" type="TextureRect" parent="Content/ClothesArea" unique_id=971484925]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.441498
+offset_top = -116.2636
+offset_right = 43.44153
+offset_bottom = -116.26361
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.20048599, 1.0907077)
+texture = ExtResource("4_nf1g4")
+
+[node name="TealSweater" type="TextureRect" parent="Content/ClothesArea" unique_id=1660604005]
+layout_mode = 0
+offset_left = 595.1485
+offset_top = -25.8362
+offset_right = 659.1485
+offset_bottom = 43.1638
+scale = Vector2(3.989212, 11.040944)
+texture = ExtResource("5_fbsq0")
+
+[node name="PinkSkirt" type="TextureRect" parent="Content/ClothesArea" unique_id=354364749]
+layout_mode = 0
+offset_left = 260.64896
+offset_top = -103.34542
+offset_right = 324.64896
+offset_bottom = -26.34542
+scale = Vector2(5.4335546, 17.532846)
+texture = ExtResource("6_fr0hp")
+
+[node name="Hat" type="TextureRect" parent="Content/ClothesArea" unique_id=1402912665]
+layout_mode = 0
+offset_left = 808.01184
+offset_top = 77.5094
+offset_right = 872.01184
+offset_bottom = 160.5094
+scale = Vector2(4.2861524, 12.083053)
+texture = ExtResource("7_312ul")
+
+[node name="Key" type="TextureRect" parent="Content" unique_id=1669268265]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -121.0
+offset_right = 82.0
+offset_bottom = 97.0
+
+[node name="CloseButton" type="Button" parent="." unique_id=1527834706]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
