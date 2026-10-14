@@ -1179,7 +1179,7 @@ shape = SubResource("RectangleShape2D_q8m1p")
 libraries/ = SubResource("AnimationLibrary_vhf7o")
 
 [node name="床" type="Sprite2D" parent="." unique_id=821317140]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(34, -2.2249985)
 texture = ExtResource("3_hbesk")
 region_enabled = true
@@ -1231,8 +1231,8 @@ region_enabled = true
 region_rect = Rect2(103, 9, 18, 18)
 
 [node name="宝箱" type="Sprite2D" parent="." unique_id=965636383]
-z_index = 1
-position = Vector2(81, 50.774994)
+y_sort_enabled = true
+position = Vector2(75, 37)
 scale = Vector2(1.0833336, 1.0833336)
 texture = ExtResource("4_2geo2")
 region_enabled = true

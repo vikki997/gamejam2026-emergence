@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bf6fafjcbl40d"]
+
+[ext_resource type="Texture2D" uid="uid://xdcylhaj5cij" path="res://sprites_draft/ui/Humble Gift - Paper UI System v1.1/Sprites/Book Desk/5.png" id="1_fb70i"]
+[ext_resource type="Script" uid="uid://bihxy41j4jorc" path="res://scripts/start_menu.gd" id="1_frkif"]
+[ext_resource type="Texture2D" uid="uid://bkog8tq4xw41q" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/start_hover.png" id="2_cp7se"]
+[ext_resource type="Texture2D" uid="uid://cwa3m8k8vw5u2" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/start_idle.png" id="3_fgoeh"]
+[ext_resource type="Texture2D" uid="uid://bylq4pfh2oehp" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/options_idle.png" id="4_cuvp2"]
+[ext_resource type="Texture2D" uid="uid://7k6562ecr5ke" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/quit_idle.png" id="4_kcs48"]
+[ext_resource type="Texture2D" uid="uid://1xemghrsi8sh" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/quit_hover.png" id="5_aso40"]
+[ext_resource type="Texture2D" uid="uid://cmvo4s2xkwdvh" path="res://sprites_draft/ui/Fantasy_project/game/gui/main_menu/buttons/options_hover.png" id="5_frkif"]
+
+[node name="StartMenu" type="Control" unique_id=1020705387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_frkif")
+
+[node name="BlackMask" type="ColorRect" parent="." unique_id=229772034]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="." unique_id=1450890056]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fb70i")
+
+[node name="StartBtn" type="TextureButton" parent="." unique_id=1603602672]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 265.0
+offset_right = 428.0
+offset_bottom = 358.0
+texture_normal = ExtResource("3_fgoeh")
+texture_hover = ExtResource("2_cp7se")
+
+[node name="OptionBtn" type="TextureButton" parent="." unique_id=1715648649]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 379.0
+offset_right = 371.0
+offset_bottom = 437.0
+texture_normal = ExtResource("4_cuvp2")
+texture_hover = ExtResource("5_frkif")
+
+[node name="QuitBtn" type="TextureButton" parent="." unique_id=71213946]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 453.0
+offset_right = 332.0
+offset_bottom = 511.0
+texture_normal = ExtResource("4_kcs48")
+texture_hover = ExtResource("5_aso40")
+
+[connection signal="pressed" from="StartBtn" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="OptionBtn" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="QuitBtn" to="." method="_on_quit_button_pressed"]
