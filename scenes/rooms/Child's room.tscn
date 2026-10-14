@@ -1067,29 +1067,15 @@ sources/0 = SubResource("TileSetAtlasSource_vhf7o")
 
 [sub_resource type="GDScript" id="GDScript_q8m1p"]
 script/source = "extends Area2D
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+var can_click: bool = true
 
-@onready var anim_player: AnimationPlayer = $AnimationPlayer 
-const NEXT_SCENE: String = \"res://scenes/living room.tscn\" 
-var can_click: bool = true 
-
-func _input_event(viewport, event, shape_idx): # 鼠标点击门碰撞区触发
-	if event.is_action_pressed(\"interact\") and can_click: 
-		can_click = false 
-		anim_player.play(\"open door\") 
-		
-		await anim_player.animation_finished # 等待开门动画播完
-		await fade_black() # 等待黑屏转场完成
-		get_tree().change_scene_to_file(NEXT_SCENE) # 切换到客厅
-
-func fade_black(): # 黑屏淡入转场函数
-	var black_mask = ColorRect.new() # 创建黑色遮罩
-	black_mask.color = Color(0,0,0,0) # 初始完全透明
-	black_mask.z_index = 999 # 放到画面最顶层
-	get_tree().root.add_child(black_mask) # 添加到游戏画面
-	
-	var tween = create_tween() # 创建渐变动画
-	tween.tween_property(black_mask, \"color:a\", 1, 0.4) # 0.4秒慢慢变黑
-	await tween.finished # 等待黑屏渐变结束
+func _input_event(viewport, event, shape_idx):
+	if event.is_action_pressed(\"interact\") and can_click:
+		can_click = false
+		anim_player.play(\"open door\")
+		await anim_player.animation_finished
+		GameManager.go_to_room(\"living_room\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8m1p"]
