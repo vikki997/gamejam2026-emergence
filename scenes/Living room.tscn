@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c4xnhsw0q7l2k"]
+[gd_scene format=4 uid="uid://d3yuwkg2mgbum"]
 
 [ext_resource type="Script" uid="uid://c62qsf6pely6q" path="res://scripts/living_room.gd" id="1_w781l"]
 [ext_resource type="Texture2D" uid="uid://btpbs85x66mqw" path="res://sprites_draft/background_items/furniture/modern/housetileset.png" id="2_2ryhs"]
