@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7882blqyxxsa"
+path="res://.godot/imported/skye-cuillin-by-kevin-macleod-from-filmmusic-io.mp3-cdd7013c0bb3eba46b4cb412e802ba06.mp3str"
+
+[deps]
+
+source_file="res://original art/ui/Fantasy_project/game/audio/skye-cuillin-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=["res://.godot/imported/skye-cuillin-by-kevin-macleod-from-filmmusic-io.mp3-cdd7013c0bb3eba46b4cb412e802ba06.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

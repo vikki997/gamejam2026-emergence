@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dm61sydwymyxt"
+path="res://.godot/imported/teller-of-the-tales-by-kevin-macleod-from-filmmusic-io.mp3-c4c355a801893786d89b679b3bfa8330.mp3str"
+
+[deps]
+
+source_file="res://original art/ui/Fantasy_project/game/audio/teller-of-the-tales-by-kevin-macleod-from-filmmusic-io.mp3"
+dest_files=["res://.godot/imported/teller-of-the-tales-by-kevin-macleod-from-filmmusic-io.mp3-c4c355a801893786d89b679b3bfa8330.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
