@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://d2eyh3w3piuss"]
+
+[ext_resource type="Texture2D" uid="uid://j0ysdmphgeiw" path="res://original art/ui/Fantasy_project/game/gui/frame.png" id="1_when3"]
+[ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="2_802vs"]
+[ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="3_efsry"]
+[ext_resource type="Texture2D" uid="uid://c4vo4jls60tdt" path="res://original art/ui/Fantasy_project/game/gui/ctc.png" id="4_jysil"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8m1p"]
+paragraph_spacing = 20.0
+font_size = 39
+font_color = Color(0.23529412, 0.11764706, 0.07450981, 1)
+
+[node name="VolumeUIPanel" type="Control" unique_id=2050142341]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1125779951]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_when3")
+
+[node name="Label" type="Label" parent="." unique_id=819163765]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 104.0
+offset_right = 305.0
+offset_bottom = 321.0
+text = "主音量
+音效
+音乐"
+label_settings = SubResource("LabelSettings_q8m1p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=268961930]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 40.0
+offset_right = 884.0
+offset_bottom = 104.0
+scale = Vector2(0.67, 0.67)
+texture_normal = ExtResource("2_802vs")
+texture_hover = ExtResource("3_efsry")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=1802130474]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 120.0
+offset_right = 745.0
+offset_bottom = 152.0
+theme_override_icons/grabber = ExtResource("4_jysil")
+
+[node name="HSlider2" type="HSlider" parent="." unique_id=1271684390]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 193.0
+offset_right = 745.0
+offset_bottom = 225.0
+theme_override_icons/grabber = ExtResource("4_jysil")
+
+[node name="HSlider3" type="HSlider" parent="." unique_id=1194836399]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 271.0
+offset_right = 745.0
+offset_bottom = 303.0
+offset_transform_enabled = true
+theme_override_icons/grabber = ExtResource("4_jysil")

@@ -4,6 +4,19 @@ var has_key = false
 var diary_unlocked = false
 var coat_rack_solved = false
 
+var bgm_day: AudioStreamPlayer
+
+func _ready():
+	# 白天BGM播放器
+	bgm_day = AudioStreamPlayer.new()
+	add_child(bgm_day)
+	bgm_day.volume_db = -8
+	
+	var day_audio:AudioStreamMP3 = load("res://sounds/daymusic.mp3")
+	day_audio.loop = true
+	bgm_day.stream = day_audio
+	bgm_day.play()
+	
 func unlock_diary():
 	diary_unlocked = true
 	
