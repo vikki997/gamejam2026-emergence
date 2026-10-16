@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bpf4unbijxykk" path="res://original art/background_items/furniture/modern/floorswalls_LRK.png" id="3_077nr"]
 [ext_resource type="Texture2D" uid="uid://b0atmq0tolyde" path="res://original art/background_items/furniture/modern/doorswindowsstairs_LRK.png" id="4_osfnh"]
 [ext_resource type="Texture2D" uid="uid://dfr1f3xcnt02p" path="res://original art/background_items/furniture/modern/decorations_LRK.png" id="5_fff0n"]
+[ext_resource type="Script" uid="uid://dphs081qfoei1" path="res://scenes/rooms/notebook_interact.gd" id="5_osfnh"]
+[ext_resource type="PackedScene" uid="uid://hph0u8oauups" path="res://scenes/PopUpWindows/notebook_ui.tscn" id="5_uffy3"]
 [ext_resource type="Texture2D" uid="uid://b570lj0hmhwgi" path="res://original art/background_items/furniture/modern/cabinets_LRK.png" id="6_1aluy"]
+[ext_resource type="Script" uid="uid://ckefnp1sq2vw3" path="res://scenes/rooms/notebook_popup.gd" id="6_fff0n"]
 [ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://original art/background_items/furniture/modern/interiors_demo.png" id="7_8abkw"]
 [ext_resource type="Texture2D" uid="uid://dor74rxmursjg" path="res://original art/background_items/furniture/modern/furniture pack coloured outline.png" id="8_opfbg"]
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="9_a3lpo"]
@@ -1118,6 +1121,9 @@ _data = {
 &"open door": SubResource("Animation_ydjgy")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_077nr"]
+size = Vector2(8, 9)
+
 [node name="Child\'s room" type="Node2D" unique_id=1051383584]
 position = Vector2(0, -1)
 
@@ -1139,13 +1145,6 @@ texture = ExtResource("1_kgvdk")
 region_enabled = true
 region_rect = Rect2(289, 19, 30, 25)
 
-[node name="笔记本" type="Sprite2D" parent="床头柜" unique_id=297308362]
-z_index = 2
-position = Vector2(-6.976747, -9.302326)
-texture = ExtResource("1_kgvdk")
-region_enabled = true
-region_rect = Rect2(324, 49, 9, 11)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=407271540]
 z_index = 1
 position = Vector2(-77, -23.224998)
@@ -1163,6 +1162,30 @@ shape = SubResource("RectangleShape2D_q8m1p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D" unique_id=997043219]
 libraries/ = SubResource("AnimationLibrary_vhf7o")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1870928646]
+script = ExtResource("5_osfnh")
+
+[node name="笔记本" type="Sprite2D" parent="Area2D2" unique_id=297308362]
+z_index = 2
+position = Vector2(-2.9999971, -13.224984)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("1_kgvdk")
+region_enabled = true
+region_rect = Rect2(324, 49, 9, 11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=121541207]
+position = Vector2(-3, -13.5)
+shape = SubResource("RectangleShape2D_077nr")
+
+[node name="NotebookPopup" type="PopupPanel" parent="." unique_id=305070354]
+script = ExtResource("6_fff0n")
+
+[node name="NotebookUI" parent="NotebookPopup" unique_id=1158379770 instance=ExtResource("5_uffy3")]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
 
 [node name="床" type="Sprite2D" parent="." unique_id=821317140]
 y_sort_enabled = true

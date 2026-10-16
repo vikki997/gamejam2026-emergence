@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://hph0u8oauups"]
+
+[ext_resource type="Texture2D" uid="uid://dsx082qrxq00q" path="res://original art/ui/Fantasy_project/game/gui/abouthistory/menu_idle.png" id="1_fsjge"]
+[ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="2_ut6k6"]
+[ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="3_fsjge"]
+[ext_resource type="Texture2D" uid="uid://c75qkqg2eyxbb" path="res://art/ui/shadow0.png" id="4_fsjge"]
+
+[node name="NotebookUI" type="Control" unique_id=1158379770]
+custom_minimum_size = Vector2(178, 104)
+layout_mode = 3
+offset_left = 2.0
+offset_right = 180.0
+offset_bottom = 104.0
+metadata/_edit_vertical_guides_ = [179.0]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=646238220]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1918.0
+offset_bottom = 1080.0
+scale = Vector2(0.092900164, 0.09311408)
+texture = ExtResource("1_fsjge")
+
+[node name="Btn_Close" type="TextureButton" parent="." unique_id=985749486]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 17.0
+offset_right = 196.0
+offset_bottom = 81.0
+scale = Vector2(0.09685678, 0.09685678)
+texture_normal = ExtResource("2_ut6k6")
+texture_hover = ExtResource("3_fsjge")
+
+[node name="Ach_Shadow_0" type="Sprite2D" parent="." unique_id=1319214631]
+position = Vector2(59.000004, 37)
+scale = Vector2(1.296875, 1.296875)
+texture = ExtResource("4_fsjge")
+
+[node name="Ach_Color_0" type="Sprite2D" parent="." unique_id=433981997]
+
+[node name="Ach_Text_0" type="Label" parent="." unique_id=52933483]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Ach_Shadow_1" type="Sprite2D" parent="." unique_id=704187856]
+
+[node name="Ach_Color_1" type="Sprite2D" parent="." unique_id=159926080]
+
+[node name="Ach_Text_1" type="Label" parent="." unique_id=1826943749]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1388995682]
+position = Vector2(88, 49.999996)
+scale = Vector2(0.7643174, 4.200184)
+zoom = Vector2(6.395, 6.395)
