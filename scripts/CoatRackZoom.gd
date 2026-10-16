@@ -35,10 +35,13 @@ const HANG_ADJUST = {
 	"hat": Vector2(60, 40),
 }
 
-# 钥匙掉落起点相对目标位置的偏移
 const KEY_DROP_OFFSET = Vector2(0, -250)
-# 掉落时长
 const KEY_DROP_DURATION = 0.9
+
+# 鞋子向左移动的距离
+const SHOE_MOVE_OFFSET = Vector2(-50, 0)
+# 移动动画时长
+const SHOE_MOVE_DURATION = 0.3
 
 # ========== 状态变量 ==========
 
@@ -51,6 +54,8 @@ var rack_drag_start = 0.0
 var solved = false
 var clothes_revealed = false
 
+var shoe_moved = false
+
 var branch_markers = { 0: [], 1: [], 2: [] }
 
 # ========== 节点引用 ==========
@@ -58,6 +63,9 @@ var branch_markers = { 0: [], 1: [], 2: [] }
 @onready var rack_sprite = $Content/RackArea/RackSprite
 @onready var clothes_pile = $Content/RackArea/ClothesPile
 @onready var key = $Content/Key
+
+@onready var shoe_sprite = $Content/ShoesArea/ShoeSprite
+@onready var fragment2 = $Content/ShoesArea/Fragment2
 
 @onready var cloth_nodes = {
 	"blue_coat": $Content/ClothesArea/BlueCoat,
@@ -67,6 +75,7 @@ var branch_markers = { 0: [], 1: [], 2: [] }
 }
 
 var original_positions = {}
+var shoe_original_pos = Vector2.ZERO
 
 # ========== 初始化 ==========
 
@@ -100,6 +109,17 @@ func _ready():
 
 	key.visible = false
 	update_rack_texture()
+
+	# 鞋子交互初始化
+	shoe_original_pos = shoe_sprite.position
+	shoe_sprite.gui_input.connect(_on_shoe_clicked)
+	fragment2.gui_input.connect(_on_fragment_clicked)
+	fragment2.visible = false
+
+	# 如果碎片2已经收集过，鞋子直接显示为移开状态，碎片不显示
+	if GameManager.has_item("fragment2"):
+		shoe_sprite.position = shoe_original_pos + SHOE_MOVE_OFFSET
+		shoe_moved = true
 
 	if GameManager.coat_rack_solved:
 		solved = true
@@ -224,7 +244,6 @@ func check_solution():
 	if placed_clothes.size() < 4:
 		return
 
-	# 只有角度0（正面）才算正确
 	if current_angle != 0:
 		await get_tree().create_timer(0.5).timeout
 		reset_all_clothes()
@@ -250,29 +269,21 @@ func check_solution():
 # ========== 钥匙掉落动画 ==========
 
 func drop_key():
-	# 目标位置 = 你在编辑器里给 Key 设置的 Position
 	var target_pos = key.position
-	# 起始位置 = 目标位置上方
 	var start_pos = target_pos + KEY_DROP_OFFSET
 
-	# 设置起始状态
 	key.position = start_pos
 	key.modulate.a = 0.0
 	key.visible = true
 
-	# 创建补间动画
 	var tween = create_tween()
-	# 先渐显（0.15秒内从透明变不透明）
 	tween.tween_property(key, "modulate:a", 1.0, 0.15)
-	# 再下落（弹跳缓动，落地有回弹感）
 	tween.tween_property(key, "position", target_pos, KEY_DROP_DURATION) \
 		.set_trans(Tween.TRANS_BOUNCE) \
 		.set_ease(Tween.EASE_OUT)
-	# 动画结束，启用点击
 	tween.finished.connect(_on_key_landed)
 
 func _on_key_landed():
-	# 掉落结束后再连接点击信号，防止掉一半被点到
 	key.gui_input.connect(_on_key_clicked)
 
 # ========== 钥匙点击 ==========
@@ -282,6 +293,27 @@ func _on_key_clicked(event):
 		key.visible = false
 		GameManager.add_item("key")
 		GameManager.has_key = true
+
+# ========== 鞋子交互 ==========
+
+func _on_shoe_clicked(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if not shoe_moved:
+			shoe_moved = true
+			# 鞋子向左移动 50 像素
+			var tween = create_tween()
+			tween.tween_property(shoe_sprite, "position",
+				shoe_original_pos + SHOE_MOVE_OFFSET, SHOE_MOVE_DURATION) \
+				.set_trans(Tween.TRANS_QUAD) \
+				.set_ease(Tween.EASE_OUT)
+			# 碎片出现
+			fragment2.visible = true
+
+func _on_fragment_clicked(event):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		fragment2.visible = false
+		GameManager.add_item("fragment2")
+		print("获得碎片2，当前物品栏：", GameManager.inventory)
 
 # ========== 关闭 ==========
 

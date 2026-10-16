@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://brr7rqoec8j24"]
+
+[ext_resource type="Script" uid="uid://owcx1dc6j6lj" path="res://scripts/Fragment.gd" id="1_nr48b"]
+[ext_resource type="Texture2D" uid="uid://c1xbuk60fc3r1" path="res://art/photo/fragment3.png" id="2_pi11v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77qkv"]
+size = Vector2(14.213696, 18.249931)
+
+[node name="Fragment" type="Area2D" unique_id=46847077]
+script = ExtResource("1_nr48b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1648264373]
+position = Vector2(111, -7)
+rotation = -0.7150801
+scale = Vector2(0.430413, 0.430413)
+texture = ExtResource("2_pi11v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=301507076]
+position = Vector2(111, -6.999999)
+rotation = 2.287504
+scale = Vector2(0.4640686, -0.2999102)
+shape = SubResource("RectangleShape2D_77qkv")

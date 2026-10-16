@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://f2dqs6570cg1" path="res://art/zoom/rack/key.png" id="9_312ul"]
 [ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="9_fr0hp"]
 [ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="10_312ul"]
+[ext_resource type="Texture2D" uid="uid://clqauq8oe64o0" path="res://art/zoom/rack/shoes.png" id="10_qxj4y"]
+[ext_resource type="Texture2D" uid="uid://byhq1y4rfp0k5" path="res://art/photo/fragment2.png" id="11_ml7fs"]
 
 [node name="CoatRackZoom" type="Control" unique_id=560867877]
 layout_mode = 3
@@ -203,6 +205,32 @@ offset_right = -29.899292
 offset_bottom = 420.9059
 scale = Vector2(0.70333284, 0.29752702)
 texture = ExtResource("9_312ul")
+
+[node name="ShoesArea" type="Control" parent="Content" unique_id=1322685952]
+anchors_preset = 0
+offset_left = -513.4994
+offset_top = 107.68753
+offset_right = -394.6059
+offset_bottom = 223.01427
+scale = Vector2(1.9068366, 1.9068366)
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.005)
+
+[node name="ShoeSprite" type="TextureRect" parent="Content/ShoesArea" unique_id=95273316]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+texture = ExtResource("10_qxj4y")
+
+[node name="Fragment2" type="TextureRect" parent="Content/ShoesArea" unique_id=866780360]
+layout_mode = 0
+offset_left = 46.368477
+offset_top = 53.502083
+offset_right = 86.36848
+offset_bottom = 93.50208
+mouse_filter = 0
+texture = ExtResource("11_ml7fs")
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=803179426]
 layout_mode = 0

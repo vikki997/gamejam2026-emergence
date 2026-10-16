@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="18_34rcw"]
 [ext_resource type="PackedScene" uid="uid://c1fj5oa7lyuw6" path="res://scenes/furniture/CoatRack.tscn" id="19_yp6bi"]
 [ext_resource type="PackedScene" uid="uid://donnlmwq0mikt" path="res://scenes/zoom/CoatRackZoom.tscn" id="20_phjea"]
+[ext_resource type="PackedScene" uid="uid://brr7rqoec8j24" path="res://scenes/furniture/Fragment.tscn" id="21_phjea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y145g"]
 texture = ExtResource("2_3n2pf")
@@ -6505,5 +6506,7 @@ y_sort_enabled = true
 [node name="CoatRack" parent="Interactables" unique_id=2026644188 instance=ExtResource("19_yp6bi")]
 position = Vector2(-5, 62)
 zoom_scene = ExtResource("20_phjea")
+
+[node name="Fragment" parent="Interactables" unique_id=46847077 instance=ExtResource("21_phjea")]
 
 [node name="ZoomLayer" type="CanvasLayer" parent="." unique_id=1564836728]
