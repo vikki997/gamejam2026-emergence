@@ -11,15 +11,23 @@ font_size = 39
 font_color = Color(0.23529412, 0.11764706, 0.07450981, 1)
 
 [node name="VolumeUIPanel" type="Control" unique_id=2050142341]
+custom_minimum_size = Vector2(900, 380)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.781
+anchor_bottom = 0.583
+offset_right = 0.28796387
+offset_bottom = 0.21600342
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_horizontal_guides_ = [381.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1125779951]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_when3")
 
 [node name="Label" type="Label" parent="." unique_id=819163765]
@@ -35,7 +43,7 @@ label_settings = SubResource("LabelSettings_q8m1p")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=268961930]
+[node name="Btn_Close" type="TextureButton" parent="." unique_id=268961930]
 layout_mode = 0
 offset_left = 820.0
 offset_top = 40.0
@@ -45,7 +53,7 @@ scale = Vector2(0.67, 0.67)
 texture_normal = ExtResource("2_802vs")
 texture_hover = ExtResource("3_efsry")
 
-[node name="HSlider" type="HSlider" parent="." unique_id=1802130474]
+[node name="Slider_Master" type="HSlider" parent="." unique_id=1802130474]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 120.0
@@ -53,7 +61,7 @@ offset_right = 745.0
 offset_bottom = 152.0
 theme_override_icons/grabber = ExtResource("4_jysil")
 
-[node name="HSlider2" type="HSlider" parent="." unique_id=1271684390]
+[node name="Slider_SFX" type="HSlider" parent="." unique_id=1271684390]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 193.0
@@ -61,7 +69,7 @@ offset_right = 745.0
 offset_bottom = 225.0
 theme_override_icons/grabber = ExtResource("4_jysil")
 
-[node name="HSlider3" type="HSlider" parent="." unique_id=1194836399]
+[node name="Slider_BGM" type="HSlider" parent="." unique_id=1194836399]
 layout_mode = 0
 offset_left = 345.0
 offset_top = 271.0

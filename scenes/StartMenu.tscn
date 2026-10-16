@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://7k6562ecr5ke" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/quit_idle.png" id="4_kcs48"]
 [ext_resource type="Texture2D" uid="uid://1xemghrsi8sh" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/quit_hover.png" id="5_aso40"]
 [ext_resource type="Texture2D" uid="uid://cmvo4s2xkwdvh" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/options_hover.png" id="5_frkif"]
+[ext_resource type="Script" uid="uid://c3io4aycs4dx0" path="res://scenes/option_btn.gd" id="7_xbxv1"]
 [ext_resource type="PackedScene" uid="uid://d2eyh3w3piuss" path="res://scenes/PopUpWindows/VolumeUIPanel.tscn" id="9_sf8pk"]
+[ext_resource type="Script" uid="uid://ddtjss8eyxhbh" path="res://scenes/volume_setting_popup.gd" id="10_6qyeu"]
 
 [node name="StartMenu" type="Control" unique_id=1020705387]
 layout_mode = 3
@@ -46,7 +48,7 @@ offset_bottom = 358.0
 texture_normal = ExtResource("3_fgoeh")
 texture_hover = ExtResource("2_cp7se")
 
-[node name="OptionBtn" type="TextureButton" parent="." unique_id=1715648649]
+[node name="OptionBtn" type="TextureButton" parent="." unique_id=1715648649 node_paths=PackedStringArray("VolumeSettingPopup")]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 379.0
@@ -54,6 +56,8 @@ offset_right = 371.0
 offset_bottom = 437.0
 texture_normal = ExtResource("4_cuvp2")
 texture_hover = ExtResource("5_frkif")
+script = ExtResource("7_xbxv1")
+VolumeSettingPopup = NodePath("../VolumeSettingPopup")
 
 [node name="QuitBtn" type="TextureButton" parent="." unique_id=71213946]
 layout_mode = 0
@@ -65,12 +69,13 @@ texture_normal = ExtResource("4_kcs48")
 texture_hover = ExtResource("5_aso40")
 
 [node name="VolumeSettingPopup" type="PopupPanel" parent="." unique_id=525137815]
+script = ExtResource("10_6qyeu")
 
 [node name="VolumeUIPanel" parent="VolumeSettingPopup" unique_id=2050142341 instance=ExtResource("9_sf8pk")]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 96.0
-offset_bottom = 96.0
+offset_right = 904.0
+offset_bottom = 384.0
 
 [connection signal="pressed" from="StartBtn" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionBtn" to="." method="_on_option_button_pressed"]
