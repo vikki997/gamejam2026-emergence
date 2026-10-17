@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://dbxvomqo3phy5"
+InventoryUi="*uid://bd83qpykighfb"
 
 [display]
 

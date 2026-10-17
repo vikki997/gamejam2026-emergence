@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bd83qpykighfb"]
+
+[ext_resource type="Script" uid="uid://d8eli3dktll6" path="res://scripts/InventoryUi.gd" id="1_jywan"]
+[ext_resource type="Texture2D" uid="uid://bie82v86u6b" path="res://art/ui/inventory_bg.png" id="1_p0ay3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0ay3"]
+texture = ExtResource("1_p0ay3")
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=217891970]
+script = ExtResource("1_jywan")
+
+[node name="Panel" type="Panel" parent="." unique_id=531451346]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.999878
+offset_top = 9.999998
+offset_right = 20.000122
+offset_bottom = -138.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-2.4799998, 1)
+
+[node name="SlotGrid" type="GridContainer" parent="Panel" unique_id=2142682611]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.8064816
+offset_top = 14.000002
+offset_right = 5.8064804
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.83870965, 0.8800003)
+theme_override_constants/v_separation = 20
+
+[node name="Slot1" type="PanelContainer" parent="Panel/SlotGrid" unique_id=1486178614]
+custom_minimum_size = Vector2(40, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0ay3")
+
+[node name="Icon" type="TextureRect" parent="Panel/SlotGrid/Slot1" unique_id=675237094]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Slot2" type="PanelContainer" parent="Panel/SlotGrid" unique_id=1216807097]
+custom_minimum_size = Vector2(40, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0ay3")
+
+[node name="Icon" type="TextureRect" parent="Panel/SlotGrid/Slot2" unique_id=1352659361]
+layout_mode = 2
+
+[node name="Slot3" type="PanelContainer" parent="Panel/SlotGrid" unique_id=330736057]
+custom_minimum_size = Vector2(40, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0ay3")
+
+[node name="Icon" type="TextureRect" parent="Panel/SlotGrid/Slot3" unique_id=59453731]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Slot4" type="PanelContainer" parent="Panel/SlotGrid" unique_id=250061581]
+custom_minimum_size = Vector2(40, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0ay3")
+
+[node name="Icon" type="TextureRect" parent="Panel/SlotGrid/Slot4" unique_id=1505609819]
+layout_mode = 2
+
+[node name="Slot5" type="PanelContainer" parent="Panel/SlotGrid" unique_id=2002006764]
+custom_minimum_size = Vector2(40, 90)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p0ay3")
+
+[node name="Icon" type="TextureRect" parent="Panel/SlotGrid/Slot5" unique_id=1574359864]
+layout_mode = 2

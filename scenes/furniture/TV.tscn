@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ckyhl1diuxnmd"]
+
+[ext_resource type="Script" uid="uid://7774emg0phbm" path="res://scripts/TV.gd" id="1_qb687"]
+[ext_resource type="Texture2D" uid="uid://chyd11shatnpi" path="res://art/furniture/TV-closed.png" id="2_tyut0"]
+[ext_resource type="Texture2D" uid="uid://do0uyla74y1bf" path="res://art/furniture/TV-opened.png" id="3_60ang"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjqgx"]
+size = Vector2(49.590553, 35.84034)
+
+[node name="TV" type="Area2D" unique_id=1664694374]
+script = ExtResource("1_qb687")
+
+[node name="Sprite_Off" type="Sprite2D" parent="." unique_id=284302520]
+texture = ExtResource("2_tyut0")
+
+[node name="Sprite_On" type="Sprite2D" parent="." unique_id=170871097]
+texture = ExtResource("3_60ang")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1888095964]
+position = Vector2(-0.774367, -0.28354883)
+scale = Vector2(1.0173564, 1.156041)
+shape = SubResource("RectangleShape2D_bjqgx")

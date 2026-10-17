@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://hph0u8oauups" path="res://scenes/PopUpWindows/notebook_ui.tscn" id="5_uffy3"]
 [ext_resource type="Texture2D" uid="uid://b570lj0hmhwgi" path="res://original art/background_items/furniture/modern/cabinets_LRK.png" id="6_1aluy"]
 [ext_resource type="Script" uid="uid://ckefnp1sq2vw3" path="res://scenes/rooms/notebook_popup.gd" id="6_fff0n"]
-[ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://original art/background_items/furniture/modern/interiors_demo.png" id="7_8abkw"]
+[ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://art/furniture/interiors_demo.png" id="7_8abkw"]
 [ext_resource type="Texture2D" uid="uid://dor74rxmursjg" path="res://original art/background_items/furniture/modern/furniture pack coloured outline.png" id="8_opfbg"]
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="9_a3lpo"]
 
@@ -1182,6 +1182,7 @@ shape = SubResource("RectangleShape2D_077nr")
 script = ExtResource("6_fff0n")
 
 [node name="NotebookUI" parent="NotebookPopup" unique_id=1158379770 instance=ExtResource("5_uffy3")]
+anchors_preset = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 96.0

@@ -4,6 +4,8 @@ var fragments_collected = 0
 var has_key = false
 var diary_unlocked = false
 var coat_rack_solved = false
+var tv_solved = false
+
 # ========== 物品栏 ==========
 # 物品栏，存道具 id，比如 "key"
 var inventory = []

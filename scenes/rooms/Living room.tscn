@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bpf4unbijxykk" path="res://original art/background_items/furniture/modern/floorswalls_LRK.png" id="5_6wbmi"]
 [ext_resource type="Texture2D" uid="uid://drktr2wrc28m2" path="res://original art/background_items/walls and floors/floor and walls spritesheet black outline.png" id="6_1b6dd"]
 [ext_resource type="Texture2D" uid="uid://dy0fcrdu6mgfc" path="res://original art/background_items/furniture/modern/livingroom_LRK.png" id="7_x7kqg"]
-[ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://original art/background_items/furniture/modern/interiors_demo.png" id="8_6hl38"]
+[ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://art/furniture/interiors_demo.png" id="8_6hl38"]
 [ext_resource type="Texture2D" uid="uid://lia5bho1346o" path="res://original art/background_items/furniture/modern/Kitchen Workspace.png" id="9_cshpv"]
 [ext_resource type="Texture2D" uid="uid://b1jy1stt46iyr" path="res://original art/background_items/furniture/modern/Carpet Large.png" id="10_maqu5"]
 [ext_resource type="Texture2D" uid="uid://bgaod8m0uhj12" path="res://original art/background_items/furniture/modern/TV Table.png" id="11_0gju1"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://c1fj5oa7lyuw6" path="res://scenes/furniture/CoatRack.tscn" id="19_yp6bi"]
 [ext_resource type="PackedScene" uid="uid://donnlmwq0mikt" path="res://scenes/zoom/CoatRackZoom.tscn" id="20_phjea"]
 [ext_resource type="PackedScene" uid="uid://brr7rqoec8j24" path="res://scenes/furniture/Fragment.tscn" id="21_phjea"]
+[ext_resource type="PackedScene" uid="uid://ckyhl1diuxnmd" path="res://scenes/furniture/TV.tscn" id="22_6wbmi"]
+[ext_resource type="PackedScene" uid="uid://c2hesadfqqpsa" path="res://scenes/zoom/TVZoom.tscn" id="23_1b6dd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y145g"]
 texture = ExtResource("2_3n2pf")
@@ -6508,5 +6510,10 @@ position = Vector2(-5, 62)
 zoom_scene = ExtResource("20_phjea")
 
 [node name="Fragment" parent="Interactables" unique_id=46847077 instance=ExtResource("21_phjea")]
+
+[node name="TV" parent="Interactables" unique_id=477930016 instance=ExtResource("22_6wbmi")]
+z_index = 1
+position = Vector2(-1, -84)
+zoom_scene = ExtResource("23_1b6dd")
 
 [node name="ZoomLayer" type="CanvasLayer" parent="." unique_id=1564836728]

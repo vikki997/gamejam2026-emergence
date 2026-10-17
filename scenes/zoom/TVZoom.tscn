@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c2hesadfqqpsa"]
+
+[ext_resource type="Script" uid="uid://x47l4dt46b5j" path="res://scripts/TV]Zoom.gd" id="1_s8ppa"]
+[ext_resource type="Texture2D" uid="uid://5ocehx4bh5jq" path="res://art/zoom/TV/TV.png" id="2_i7igv"]
+[ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="3_e5l5c"]
+[ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="4_dk0s7"]
+
+[node name="TVZoom" type="Control" unique_id=590449390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8ppa")
+
+[node name="Background" type="ColorRect" parent="." unique_id=512720792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4509804)
+
+[node name="TVImage" type="TextureRect" parent="." unique_id=1359678912]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_i7igv")
+
+[node name="ClickArea" type="TextureButton" parent="." unique_id=598167445]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 602.0
+offset_top = 282.99997
+offset_right = 642.0
+offset_bottom = 305.46335
+scale = Vector2(13.645989, 15.966578)
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=342743929]
+layout_mode = 0
+offset_left = 1082.0
+offset_top = 10.0
+offset_right = 1146.0
+offset_bottom = 74.0
+texture_normal = ExtResource("3_e5l5c")
+texture_hover = ExtResource("4_dk0s7")

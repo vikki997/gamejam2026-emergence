@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b2b0few3o52cc"]
+
+[ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="1_hiu63"]
+[ext_resource type="Script" uid="uid://cfujlyiu7awwi" path="res://scripts/HashiPuzzle.gd" id="1_vp60s"]
+[ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="2_vp60s"]
+
+[node name="HashiPuzzle" type="Control" unique_id=2139038330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vp60s")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1566845805]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6901961)
+
+[node name="SubmitButton" type="Button" parent="." unique_id=892610029]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 524.99994
+offset_top = -99.99994
+offset_right = 525.0
+offset_bottom = -91.99994
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.079999685, 7.721112)
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1067295451]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 24.0
+offset_right = 1132.0
+offset_bottom = 88.0
+texture_normal = ExtResource("1_hiu63")
+texture_hover = ExtResource("2_vp60s")
