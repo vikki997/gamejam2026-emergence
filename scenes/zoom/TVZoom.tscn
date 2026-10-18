@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5ocehx4bh5jq" path="res://art/zoom/TV/TV.png" id="2_i7igv"]
 [ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="3_e5l5c"]
 [ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="4_dk0s7"]
+[ext_resource type="Texture2D" uid="uid://plnbv22omcvt" path="res://art/zoom/TV/TV2.png" id="5_i7igv"]
 
 [node name="TVZoom" type="Control" unique_id=590449390]
 layout_mode = 3
@@ -50,3 +51,12 @@ offset_right = 1146.0
 offset_bottom = 74.0
 texture_normal = ExtResource("3_e5l5c")
 texture_hover = ExtResource("4_dk0s7")
+
+[node name="SolvedImage" type="TextureRect" parent="." unique_id=123175704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_i7igv")

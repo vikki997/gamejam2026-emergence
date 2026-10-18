@@ -20,7 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="18_34rcw"]
 [ext_resource type="PackedScene" uid="uid://c1fj5oa7lyuw6" path="res://scenes/furniture/CoatRack.tscn" id="19_yp6bi"]
 [ext_resource type="PackedScene" uid="uid://donnlmwq0mikt" path="res://scenes/zoom/CoatRackZoom.tscn" id="20_phjea"]
-[ext_resource type="PackedScene" uid="uid://brr7rqoec8j24" path="res://scenes/furniture/Fragment.tscn" id="21_phjea"]
+[ext_resource type="PackedScene" uid="uid://brr7rqoec8j24" path="res://scenes/furniture/Fragment3.tscn" id="21_phjea"]
+[ext_resource type="PackedScene" uid="uid://bokjyroma35ax" path="res://scenes/furniture/Fragment4.tscn" id="21_x7kqg"]
 [ext_resource type="PackedScene" uid="uid://ckyhl1diuxnmd" path="res://scenes/furniture/TV.tscn" id="22_6wbmi"]
 [ext_resource type="PackedScene" uid="uid://c2hesadfqqpsa" path="res://scenes/zoom/TVZoom.tscn" id="23_1b6dd"]
 
@@ -6509,7 +6510,16 @@ y_sort_enabled = true
 position = Vector2(-5, 62)
 zoom_scene = ExtResource("20_phjea")
 
-[node name="Fragment" parent="Interactables" unique_id=46847077 instance=ExtResource("21_phjea")]
+[node name="Fragment4" parent="Interactables" unique_id=2028773577 instance=ExtResource("21_x7kqg")]
+visible = false
+z_index = 10
+position = Vector2(-2, -56)
+scale = Vector2(1.065084, -1.1811117)
+
+[node name="Fragment3" parent="Interactables" unique_id=46847077 instance=ExtResource("21_phjea")]
+z_index = 1
+position = Vector2(114, -4)
+scale = Vector2(2.143278, 2.1884208)
 
 [node name="TV" parent="Interactables" unique_id=477930016 instance=ExtResource("22_6wbmi")]
 z_index = 1

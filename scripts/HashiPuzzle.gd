@@ -1,31 +1,97 @@
 extends Control
 
 signal closed
+# ★ 核心修改 1：新增专属的通关成功信号
+signal puzzle_solved 
 
-# 定义 4 个岛屿：pos 是屏幕坐标，target 是目标连线数
-var islands = [
-	{"pos": Vector2(400, 200), "target": 2, "current": 0},
-	{"pos": Vector2(800, 200), "target": 3, "current": 0},
-	{"pos": Vector2(400, 500), "target": 3, "current": 0},
-	{"pos": Vector2(800, 500), "target": 2, "current": 0}
+# 定义桥的颜色：蓝色、青色、玫红、浅蓝、橙色
+const BRIDGE_COLORS = [
+	Color(0.0, 0.6, 1.0),    # 亮蓝色
+	Color(0.0, 1.0, 1.0),    # 青色
+	Color(1.0, 0.2, 0.6),    # 玫红色
+	Color(0.6, 0.8, 1.0),    # 浅蓝色
+	Color(1.0, 0.6, 0.0)     # 橙色
 ]
 
-# 记录所有的桥: [起点索引, 终点索引, 桥的数量(1或2)]
+var all_levels = []
+var current_level_idx = 0
+var islands = []
 var bridges = []
-
-# 当前选中的岛屿索引（-1 表示未选中）
 var selected_island = -1
 
 func _ready():
-	# 连接按钮
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	
 	$SubmitButton.pressed.connect(_on_submit)
 	$CloseButton.pressed.connect(_on_close)
-	# 触发一次绘制
+	
+	_generate_levels()
+	_load_level(0)
+
+# ================= 根据屏幕比例动态生成坐标 =================
+func _generate_levels():
+	var screen = get_viewport_rect().size
+	
+	# 强制取整，防止浮点数误差导致无法水平/垂直连线
+	var cx = round(screen.x * 0.45)
+	var cy = round(screen.y * 0.5)
+	var dx = round(min(150, screen.x * 0.15))
+	var dy = round(min(150, screen.y * 0.2))
+	
+	all_levels = [
+		# 关卡 1
+		{
+			"islands": [
+				{"pos": Vector2(cx - dx, cy), "target": 2},
+				{"pos": Vector2(cx, cy), "target": 5},
+				{"pos": Vector2(cx + dx, cy), "target": 2},
+				{"pos": Vector2(cx, cy - dy), "target": 1}
+			]
+		},
+		# 关卡 2
+		{
+			"islands": [
+				{"pos": Vector2(cx - dx, cy - dy), "target": 3},
+				{"pos": Vector2(cx, cy - dy), "target": 4},
+				{"pos": Vector2(cx + dx, cy - dy), "target": 2},
+				{"pos": Vector2(cx - dx, cy + dy), "target": 3},
+				{"pos": Vector2(cx, cy + dy), "target": 4},
+				{"pos": Vector2(cx + dx, cy + dy), "target": 2}
+			]
+		},
+		# 关卡 3
+		{
+			"islands": [
+				{"pos": Vector2(cx - dx, cy - dy), "target": 3},
+				{"pos": Vector2(cx, cy - dy), "target": 4},
+				{"pos": Vector2(cx + dx, cy - dy), "target": 3},
+				{"pos": Vector2(cx - dx, cy + round(dy*0.5)), "target": 3},
+				{"pos": Vector2(cx, cy + round(dy*0.5)), "target": 6},
+				{"pos": Vector2(cx + dx, cy + round(dy*0.5)), "target": 3},
+				{"pos": Vector2(cx, cy + round(dy*1.5)), "target": 2}
+			]
+		}
+	]
+
+# ================= 加载关卡 =================
+func _load_level(idx):
+	current_level_idx = idx
+	bridges.clear()
+	selected_island = -1
+	
+	islands.clear()
+	for item in all_levels[idx]["islands"]:
+		islands.append({
+			"pos": item["pos"],
+			"target": item["target"],
+			"current": 0
+		})
+		
 	queue_redraw()
 
 # ================= 绘制逻辑 =================
 func _draw():
-	# 1. 画所有的桥（线）
+	# 1. 画桥（带颜色）
 	for bridge in bridges:
 		var idx1 = bridge[0]
 		var idx2 = bridge[1]
@@ -34,55 +100,52 @@ func _draw():
 		var p1 = islands[idx1].pos
 		var p2 = islands[idx2].pos
 		
+		# 用两个岛屿的索引相加，分配固定的颜色
+		var color_idx = abs(idx1 + idx2) % BRIDGE_COLORS.size()
+		var bridge_color = BRIDGE_COLORS[color_idx]
+		
 		if count == 1:
-			# 单线
-			draw_line(p1, p2, Color.WHITE, 4.0)
+			draw_line(p1, p2, bridge_color, 4.0)
 		elif count == 2:
-			# 双线：计算一个垂直偏移量，画两条平行的线
 			var dir = (p2 - p1).normalized()
 			var offset = Vector2(-dir.y, dir.x) * 6.0
-			draw_line(p1 + offset, p2 + offset, Color.WHITE, 3.0)
-			draw_line(p1 - offset, p2 - offset, Color.WHITE, 3.0)
+			draw_line(p1 + offset, p2 + offset, bridge_color, 3.0)
+			draw_line(p1 - offset, p2 - offset, bridge_color, 3.0)
 
-	# 2. 画所有的岛（圆）和数字
+	# 2. 画岛和数字
+	var font = ThemeDB.fallback_font
+	var font_size = 28
+	
 	for i in range(islands.size()):
 		var isl = islands[i]
-		# 如果被选中，颜色变红，否则是淡蓝色
 		var color = Color(1, 0.3, 0.3) if i == selected_island else Color(0.3, 0.8, 1.0)
 		
-		# 画圆
 		draw_circle(isl.pos, 35, color)
 		
-		# 画数字（黑色字体）
 		var text = str(isl.target)
-		var font = ThemeDB.fallback_font
-		draw_string(font, isl.pos + Vector2(-8, 10), text, HORIZONTAL_ALIGNMENT_CENTER, -1, 24, Color.BLACK)
+		var text_size = font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size)
+		var text_pos = isl.pos - Vector2(text_size.x / 2.0, -text_size.y / 4.0)
+		
+		draw_string(font, text_pos, text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size, Color.BLACK)
 
-# ================= 输入交互逻辑 =================
+# ================= 输入交互 =================
 func _input(event):
-	# 只处理鼠标左键点击
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		for i in range(islands.size()):
-			# 判断点击是否落在了圆的半径内
 			if event.position.distance_to(islands[i].pos) < 35:
 				_handle_island_click(i)
-				queue_redraw() # 重绘画面
-				get_viewport().set_input_as_handled() # 拦截事件
+				queue_redraw()
+				get_viewport().set_input_as_handled()
 				return
-				
-		# 如果点到了空白处，取消选中
 		selected_island = -1
 		queue_redraw()
 
 func _handle_island_click(idx: int):
 	if selected_island == -1:
-		# 第一次点击：选中
 		selected_island = idx
 	elif selected_island == idx:
-		# 点击自己：取消选中
 		selected_island = -1
 	else:
-		# 点击了另一个岛：尝试连线
 		_try_connect(selected_island, idx)
 		selected_island = -1
 
@@ -90,62 +153,77 @@ func _try_connect(a: int, b: int):
 	var p1 = islands[a].pos
 	var p2 = islands[b].pos
 	
-	# 规则1：只能水平或垂直连
-	if p1.x != p2.x and p1.y != p2.y:
-		print("不能斜着连！")
-		return
+	# 使用绝对值容差判定，防止因为微小误差导致判定为斜线
+	if abs(p1.x - p2.x) > 1.0 and abs(p1.y - p2.y) > 1.0:
+		return 
 		
-	# 规则2：中间不能被其他岛挡住
 	for i in range(islands.size()):
 		if i == a or i == b: continue
 		if _is_between(p1, p2, islands[i].pos):
-			print("被其他岛挡住了，不能连！")
-			return
+			return 
 
-	# 检查是否已经有桥了
+	# 安全地查找并修改桥
+	var found_bridge = null
 	for bridge in bridges:
 		if (bridge[0] == a and bridge[1] == b) or (bridge[0] == b and bridge[1] == a):
-			# 状态循环：单线 -> 双线 -> 取消
-			bridge[2] += 1
-			if bridge[2] > 2: # 超过2条就拆掉
-				bridges.erase(bridge)
-			_update_currents()
-			return
+			found_bridge = bridge
+			break
+			
+	if found_bridge != null:
+		found_bridge[2] += 1
+		if found_bridge[2] > 2:
+			bridges.erase(found_bridge)
+		_update_currents()
+		return
 
-	# 新建单线桥
+	# 新建桥
 	bridges.append([a, b, 1])
 	_update_currents()
 
 func _is_between(p1: Vector2, p2: Vector2, p: Vector2) -> bool:
-	# 判断点 p 是否在 p1 到 p2 的线段中间
-	if p1.x == p2.x and p.x == p1.x:
+	if abs(p1.x - p2.x) < 1.0 and abs(p.x - p1.x) < 1.0:
 		return min(p1.y, p2.y) < p.y and p.y < max(p1.y, p2.y)
-	if p1.y == p2.y and p.y == p1.y:
+	if abs(p1.y - p2.y) < 1.0 and abs(p.y - p1.y) < 1.0:
 		return min(p1.x, p2.x) < p.x and p.x < max(p1.x, p2.x)
 	return false
 
 func _update_currents():
-	# 每次连线变化，重新计算每个岛当前的连线数
-	for isl in islands:
-		isl.current = 0
+	for isl in islands: isl.current = 0
 	for bridge in bridges:
 		islands[bridge[0]].current += bridge[2]
 		islands[bridge[1]].current += bridge[2]
 
 # ================= 提交校验 =================
 func _on_submit():
+	$SubmitButton.disabled = true
+	
+	var is_correct = true
 	for isl in islands:
 		if isl.current != isl.target:
-			print("连线数量不对！")
-			$SubmitButton.text = "错误，再试试！"
-			await get_tree().create_timer(1.5).timeout
-			$SubmitButton.text = "确认连线"
-			return
+			is_correct = false
+			break
 			
-	# 全部匹配正确
-	print("解谜成功！")
-	closed.emit()
-	queue_free()
+	if not is_correct:
+		$SubmitButton.modulate = Color(1, 0.4, 0.4, 0.7)
+		await get_tree().create_timer(1.0).timeout
+		$SubmitButton.modulate = Color(1, 1, 1, 1)
+		$SubmitButton.disabled = false
+		return
+		
+	$SubmitButton.modulate = Color(0.5, 0.5, 0.5)
+	await get_tree().create_timer(1.0).timeout
+	
+	if current_level_idx < all_levels.size() - 1:
+		# 还没到最后一关，进入下一关
+		_load_level(current_level_idx + 1)
+		$SubmitButton.modulate = Color(1, 1, 1, 1)
+		$SubmitButton.disabled = false
+	else:
+		# ★ 核心修改 2：所有关卡通关，发出信号！
+		print("所有谜题解谜成功！")
+		puzzle_solved.emit() 
+		closed.emit()
+		queue_free()
 
 # ================= 关闭 =================
 func _on_close():
