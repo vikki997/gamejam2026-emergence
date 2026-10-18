@@ -1,47 +1,97 @@
 [gd_scene format=3 uid="uid://hph0u8oauups"]
 
-[ext_resource type="Texture2D" uid="uid://dsx082qrxq00q" path="res://original art/ui/Fantasy_project/game/gui/abouthistory/menu_idle.png" id="1_fsjge"]
+[ext_resource type="Texture2D" uid="uid://bpmc1ny5rtlcc" path="res://art/ui/book.png" id="1_fsjge"]
 [ext_resource type="Texture2D" uid="uid://c8pii4kb0g8bd" path="res://original art/ui/Fantasy_project/game/gui/button/return_idle.png" id="2_ut6k6"]
 [ext_resource type="Texture2D" uid="uid://dyu34g87ixsx6" path="res://original art/ui/Fantasy_project/game/gui/button/return_hover.png" id="3_fsjge"]
 [ext_resource type="Texture2D" uid="uid://c75qkqg2eyxbb" path="res://art/ui/shadow0.png" id="4_fsjge"]
+[ext_resource type="Texture2D" uid="uid://ckf8fuchdqe7s" path="res://art/ui/photo.png" id="5_qrrmd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrrmd"]
+font_size = 34
+font_color = Color(0.5525154, 0.5525154, 0.5525154, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ccp1"]
+font_size = 15
+font_color = Color(0.5525154, 0.5525154, 0.5525154, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eat4j"]
+font_size = 34
+font_color = Color(0.5525154, 0.5525154, 0.5525154, 1)
 
 [node name="NotebookUI" type="Control" unique_id=1158379770]
-custom_minimum_size = Vector2(178, 104)
+custom_minimum_size = Vector2(880, 498)
 layout_mode = 3
-offset_left = 2.0
-offset_right = 180.0
-offset_bottom = 104.0
-metadata/_edit_vertical_guides_ = [179.0]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = -225.0
+offset_bottom = -131.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=646238220]
+texture_filter = 1
 layout_mode = 0
 offset_left = -2.0
-offset_right = 1918.0
-offset_bottom = 1080.0
+offset_right = 9544.235
+offset_bottom = 5369.7573
 scale = Vector2(0.092900164, 0.09311408)
 texture = ExtResource("1_fsjge")
 
 [node name="Btn_Close" type="TextureButton" parent="." unique_id=985749486]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 17.0
-offset_right = 196.0
-offset_bottom = 81.0
-scale = Vector2(0.09685678, 0.09685678)
+offset_left = 785.0
+offset_top = 29.0
+offset_right = 849.0
+offset_bottom = 93.0
+scale = Vector2(0.587, 0.587)
 texture_normal = ExtResource("2_ut6k6")
 texture_hover = ExtResource("3_fsjge")
 
 [node name="Ach_Shadow_0" type="Sprite2D" parent="." unique_id=1319214631]
-position = Vector2(59.000004, 37)
-scale = Vector2(1.296875, 1.296875)
+texture_filter = 1
+position = Vector2(229.09375, 164.09375)
+scale = Vector2(8.886719, 8.886719)
 texture = ExtResource("4_fsjge")
 
 [node name="Ach_Color_0" type="Sprite2D" parent="." unique_id=433981997]
+texture_filter = 1
+position = Vector2(229.5, 163.5)
+scale = Vector2(8.9375, 8.9375)
+texture = ExtResource("5_qrrmd")
 
 [node name="Ach_Text_0" type="Label" parent="." unique_id=52933483]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 149.0
+offset_top = 252.0
+offset_right = 319.0
+offset_bottom = 299.0
+text = "未知的物品"
+label_settings = SubResource("LabelSettings_qrrmd")
+
+[node name="Ach_Text_00" type="Label" parent="." unique_id=1846606321]
+visible = false
+layout_mode = 0
+offset_left = 147.0
+offset_top = 305.0
+offset_right = 314.0
+offset_bottom = 384.0
+text = "照片定格了一家人
+幸福的时刻，但不知道
+什么时候被人撕碎了。"
+label_settings = SubResource("LabelSettings_3ccp1")
+horizontal_alignment = 1
+
+[node name="Ach_Text_01" type="Label" parent="." unique_id=301235689]
+visible = false
+layout_mode = 0
+offset_left = 149.0
+offset_top = 252.0
+offset_right = 319.0
+offset_bottom = 299.0
+text = "一张全家福"
+label_settings = SubResource("LabelSettings_eat4j")
 
 [node name="Ach_Shadow_1" type="Sprite2D" parent="." unique_id=704187856]
 
@@ -51,8 +101,3 @@ offset_bottom = 23.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1388995682]
-position = Vector2(88, 49.999996)
-scale = Vector2(0.7643174, 4.200184)
-zoom = Vector2(6.395, 6.395)
