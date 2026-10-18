@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cd1nfgy5xujdq" path="res://art/furniture/interiors_demo.png" id="7_8abkw"]
 [ext_resource type="Texture2D" uid="uid://dor74rxmursjg" path="res://original art/background_items/furniture/modern/furniture pack coloured outline.png" id="8_opfbg"]
 [ext_resource type="Texture2D" uid="uid://df4mamu10jq2d" path="res://original art/background_items/furniture/modern/wardrobes_BR.png" id="9_a3lpo"]
+[ext_resource type="Shader" uid="uid://b4psa5orl3xx7" path="res://scripts/vision_mask.gdshader" id="13_1aluy"]
+[ext_resource type="PackedScene" uid="uid://dm3dyqwccbkox" path="res://scenes/ui/bear_holder.tscn" id="13_8abkw"]
+[ext_resource type="Script" uid="uid://c0isob8kj11yy" path="res://scenes/rooms/black_overlay.gd" id="14_8abkw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhf7o"]
 texture = ExtResource("1_kgvdk")
@@ -1124,13 +1127,18 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_077nr"]
 size = Vector2(8, 9)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qco37"]
+shader = ExtResource("13_1aluy")
+shader_parameter/center = Vector2(0.47, 0.385)
+shader_parameter/radius = 0.01
+shader_parameter/softness = 0.08
+shader_parameter/inner_bright = 0.5
+shader_parameter/outer_bright = 0.15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86p6y"]
+
 [node name="Child\'s room" type="Node2D" unique_id=1051383584]
 position = Vector2(0, -1)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1270937444]
-z_index = 4
-position = Vector2(-1, -3)
-zoom = Vector2(4.435, 4.435)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=899490066]
 position = Vector2(31, 124.775)
@@ -1177,16 +1185,6 @@ region_rect = Rect2(324, 49, 9, 11)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=121541207]
 position = Vector2(-3, -13.5)
 shape = SubResource("RectangleShape2D_077nr")
-
-[node name="NotebookPopup" type="PopupPanel" parent="." unique_id=305070354]
-script = ExtResource("6_fff0n")
-
-[node name="NotebookUI" parent="NotebookPopup" unique_id=1158379770 instance=ExtResource("5_uffy3")]
-anchors_preset = 0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 96.0
-offset_bottom = 96.0
 
 [node name="床" type="Sprite2D" parent="." unique_id=821317140]
 y_sort_enabled = true
@@ -1262,3 +1260,40 @@ position = Vector2(-19, -30.224998)
 texture = ExtResource("7_8abkw")
 region_enabled = true
 region_rect = Rect2(114, 164, 11, 11)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1270937444]
+z_index = 4
+position = Vector2(-1, -3)
+zoom = Vector2(4.435, 4.435)
+
+[node name="BlackMaskLayer" type="CanvasLayer" parent="." unique_id=1692205241]
+visible = false
+
+[node name="BlackOverlay" type="ColorRect" parent="BlackMaskLayer" unique_id=430953833]
+z_index = 4
+material = SubResource("ShaderMaterial_qco37")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -77.0
+offset_right = 3.0
+offset_bottom = 411.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6039216)
+script = ExtResource("14_8abkw")
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=1907807178]
+layer = 5
+
+[node name="BearHolder" parent="UI_Layer" unique_id=2104612480 instance=ExtResource("13_8abkw")]
+
+[node name="NotebookPopup" type="PopupPanel" parent="." unique_id=305070354]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_86p6y")
+script = ExtResource("6_fff0n")
+
+[node name="NotebookUI" parent="NotebookPopup" unique_id=1158379770 instance=ExtResource("5_uffy3")]
+offset_top = 0.0
+offset_right = 880.0
+offset_bottom = 498.0
