@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://dm3dyqwccbkox"]
 
 [ext_resource type="Texture2D" uid="uid://bctiniwn6uotn" path="res://art/bear/BearAnimIdle-Sheet.png" id="1_ppq70"]
-[ext_resource type="Script" uid="uid://c4h1fsswjtbfn" path="res://scenes/rooms/bear.gd" id="2_wj4dj"]
-[ext_resource type="Texture2D" uid="uid://dacra4gry2qdr" path="res://original art/ui/Fantasy_project/game/gui/textbox.png" id="3_1b67d"]
-[ext_resource type="FontFile" uid="uid://isija5u1tciq" path="res://original art/ui/Fantasy_project/game/gui/font/CaslonAntique.ttf" id="4_77mb6"]
+[ext_resource type="Script" uid="uid://c4h1fsswjtbfn" path="res://scripts/bear.gd" id="2_wj4dj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04hym"]
 atlas = ExtResource("1_ppq70")
@@ -46,11 +44,6 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_q8m1p"]
-line_spacing = -1.56
-font_size = 24
-font_color = Color(0.09411765, 0.08627451, 0.101960786, 1)
-
 [node name="BearHolder" type="Control" unique_id=2104612480]
 layout_mode = 3
 anchors_preset = 2
@@ -70,22 +63,5 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.63872534
 script = ExtResource("2_wj4dj")
-tip_label = NodePath("../Tip")
-dialog_box = NodePath("../textbox")
-
-[node name="textbox" type="Sprite2D" parent="." unique_id=941296667]
-position = Vector2(406.21875, 552.99176)
-scale = Vector2(0.4960612, 0.29343045)
-texture = ExtResource("3_1b67d")
-
-[node name="Tip" type="Label" parent="." unique_id=521241039]
-layout_mode = 0
-offset_left = 117.0
-offset_top = 537.0
-offset_right = 693.0
-offset_bottom = 571.0
-scale = Vector2(1, 1.05)
-theme_override_colors/font_color = Color(0.09411765, 0.08627451, 0.101960786, 1)
-theme_override_fonts/font = ExtResource("4_77mb6")
-theme_override_font_sizes/font_size = 5
-label_settings = SubResource("LabelSettings_q8m1p")
+tip_label = NodePath("")
+dialog_box = NodePath("")

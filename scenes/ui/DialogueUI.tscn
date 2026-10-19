@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bbt1krwp7c7r3"]
+
+[ext_resource type="Script" uid="uid://dwfykhkmj2wde" path="res://scripts/DialogueUI.gd" id="1_6snq5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjgy6"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_6snq5"]
+font_size = 24
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1623068500 node_paths=PackedStringArray("mask_node", "box_node", "name_label", "text_label")]
+script = ExtResource("1_6snq5")
+mask_node = NodePath("Mask")
+box_node = NodePath("DialogueBox")
+name_label = NodePath("DialogueBox/NameLabel")
+text_label = NodePath("DialogueBox/TextLabel")
+
+[node name="Mask" type="ColorRect" parent="." unique_id=1466437777]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.003921569, 0.011764706, 0.5137255)
+
+[node name="DialogueBox" type="Control" parent="." unique_id=531659939]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="DialogueBox" unique_id=717075372]
+layout_mode = 1
+offset_left = 271.0
+offset_top = 512.0
+offset_right = 419.00003
+offset_bottom = 598.0
+label_settings = SubResource("LabelSettings_wjgy6")
+
+[node name="TextLabel" type="Label" parent="DialogueBox" unique_id=1116706172]
+layout_mode = 1
+offset_left = 269.0
+offset_top = 554.0
+offset_right = 1197.0
+offset_bottom = 674.0
+label_settings = SubResource("LabelSettings_6snq5")

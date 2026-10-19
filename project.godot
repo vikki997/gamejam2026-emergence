@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Emergence"
-run/main_scene="uid://cr5dwoyond78o"
+run/main_scene="uid://bf6fafjcbl40d"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://dbxvomqo3phy5"
 InventoryUi="*uid://bd83qpykighfb"
+DialogueUI="*uid://bbt1krwp7c7r3"
 
 [display]
 

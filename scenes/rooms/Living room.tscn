@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://bokjyroma35ax" path="res://scenes/furniture/Fragment4.tscn" id="21_x7kqg"]
 [ext_resource type="PackedScene" uid="uid://ckyhl1diuxnmd" path="res://scenes/furniture/TV.tscn" id="22_6wbmi"]
 [ext_resource type="PackedScene" uid="uid://c2hesadfqqpsa" path="res://scenes/zoom/TVZoom.tscn" id="23_1b6dd"]
+[ext_resource type="Script" uid="uid://usdc1b8va53y" path="res://scripts/Arrow.gd" id="25_cshpv"]
+[ext_resource type="Texture2D" uid="uid://dcm3h1dqc8cgg" path="res://art/ui/arrow.png" id="26_maqu5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y145g"]
 texture = ExtResource("2_3n2pf")
@@ -6479,6 +6481,9 @@ texture = ExtResource("8_6hl38")
 [sub_resource type="TileSet" id="TileSet_uqv50"]
 sources/0 = SubResource("TileSetAtlasSource_7vtu7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjqgx"]
+size = Vector2(12, 16)
+
 [node name="living room" type="Node2D" unique_id=1972330687]
 y_sort_enabled = true
 script = ExtResource("1_kgjch")
@@ -6527,3 +6532,15 @@ position = Vector2(-1, -84)
 zoom_scene = ExtResource("23_1b6dd")
 
 [node name="ZoomLayer" type="CanvasLayer" parent="." unique_id=1564836728]
+
+[node name="DownArrow" type="Area2D" parent="." unique_id=1544826856]
+script = ExtResource("25_cshpv")
+
+[node name="Sprite2D" type="Sprite2D" parent="DownArrow" unique_id=2017296404]
+position = Vector2(28, 69)
+rotation = 3.1371553
+texture = ExtResource("26_maqu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownArrow" unique_id=41734259]
+position = Vector2(28, 68)
+shape = SubResource("RectangleShape2D_bjqgx")

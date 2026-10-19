@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://7k6562ecr5ke" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/quit_idle.png" id="4_kcs48"]
 [ext_resource type="Texture2D" uid="uid://1xemghrsi8sh" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/quit_hover.png" id="5_aso40"]
 [ext_resource type="Texture2D" uid="uid://cmvo4s2xkwdvh" path="res://original art/ui/Fantasy_project/game/gui/main_menu/buttons/options_hover.png" id="5_frkif"]
-[ext_resource type="Script" uid="uid://c3io4aycs4dx0" path="res://scenes/option_btn.gd" id="7_xbxv1"]
+[ext_resource type="Script" uid="uid://c3io4aycs4dx0" path="res://scripts/option_btn.gd" id="7_xbxv1"]
 [ext_resource type="PackedScene" uid="uid://d2eyh3w3piuss" path="res://scenes/PopUpWindows/VolumeUIPanel.tscn" id="9_sf8pk"]
-[ext_resource type="Script" uid="uid://ddtjss8eyxhbh" path="res://scenes/volume_setting_popup.gd" id="10_6qyeu"]
+[ext_resource type="Script" uid="uid://ddtjss8eyxhbh" path="res://scripts/volume_setting_popup.gd" id="10_6qyeu"]
 
 [node name="StartMenu" type="Control" unique_id=1020705387]
 layout_mode = 3
@@ -69,6 +69,8 @@ texture_normal = ExtResource("4_kcs48")
 texture_hover = ExtResource("5_aso40")
 
 [node name="VolumeSettingPopup" type="PopupPanel" parent="." unique_id=525137815]
+oversampling_override = 1.0
+size = Vector2i(908, 388)
 script = ExtResource("10_6qyeu")
 
 [node name="VolumeUIPanel" parent="VolumeSettingPopup" unique_id=2050142341 instance=ExtResource("9_sf8pk")]
